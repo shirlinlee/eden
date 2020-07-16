@@ -1,0 +1,30 @@
+%bg_img_center {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+%position_center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+%icon_position_left {
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+%icon_position_right {
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+%icon_position_bottom {
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}

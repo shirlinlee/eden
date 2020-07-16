@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="207" height="288.106" viewBox="0 0 207 288.106">
+    <defs>
+        <style>
+            .prefix__cls-3{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="prefix__link4" transform="translate(-1067 -7392)">
+        <circle id="prefix__Ellipse_16" cx="103.5" cy="103.5" r="103.5" fill="#c63" data-name="Ellipse 16" transform="translate(1067 7392)"/>
+        <text id="prefix__伊甸公益MaLL" fill="#c63" font-family="MicrosoftJhengHeiBold, Microsoft JhengHei" font-size="26.764px" letter-spacing="0.08em" transform="translate(1169.542 7673.106)">
+            <tspan x="-95.81" y="0">伊甸公益MaLL</tspan>
+        </text>
+        <g id="prefix__Group_104" data-name="Group 104">
+            <path id="prefix__Path_77" d="M1106.807 7451.661h23.42l13.138 69.118h66.835l12-47.983h-67.975" class="prefix__cls-3" data-name="Path 77"/>
+            <circle id="prefix__Ellipse_17" cx="9.711" cy="9.711" r="9.711" class="prefix__cls-3" data-name="Ellipse 17" transform="translate(1142.508 7531.917)"/>
+            <circle id="prefix__Ellipse_18" cx="9.711" cy="9.711" r="9.711" class="prefix__cls-3" data-name="Ellipse 18" transform="translate(1192.776 7531.917)"/>
+        </g>
+    </g>
+</svg>

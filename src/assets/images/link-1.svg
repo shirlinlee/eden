@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="207" height="309.408" viewBox="0 0 207 309.408">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="prefix__link1" transform="translate(-276.924 -7392.416)">
+        <circle id="prefix__Ellipse_10" cx="103.5" cy="103.5" r="103.5" fill="#f96" data-name="Ellipse 10" transform="translate(276.924 7392.416)"/>
+        <g id="prefix__Group_94" data-name="Group 94">
+            <circle id="prefix__Ellipse_11" cx="42.12" cy="42.12" r="42.12" class="prefix__cls-2" data-name="Ellipse 11" transform="translate(322.401 7437.416)"/>
+            <circle id="prefix__Ellipse_12" cx="29.533" cy="29.533" r="29.533" class="prefix__cls-2" data-name="Ellipse 12" transform="translate(334.988 7450.004)"/>
+            <path id="prefix__Path_55" d="M343.7 7479.537a20.818 20.818 0 0 1 20.818-20.819" class="prefix__cls-2" data-name="Path 55"/>
+            <path id="prefix__Path_56" d="M400.746 7501.238l35.029 35.029a9.12 9.12 0 0 1 0 12.9l-2.58 2.58a9.12 9.12 0 0 1-12.9 0l-35.029-35.029" class="prefix__cls-2" data-name="Path 56"/>
+            <path id="prefix__Line_17" d="M0 15.493L15.493 0" class="prefix__cls-2" data-name="Line 17" transform="translate(409.546 7525.53)"/>
+            <path id="prefix__Line_18" d="M0 15.493L14.524 0" class="prefix__cls-2" data-name="Line 18" transform="translate(416.324 7532.308)"/>
+        </g>
+        <text id="prefix__更多了解_伊甸身障服務" fill="#f96" data-name="更多了解 伊甸身障服務" font-family="MicrosoftJhengHeiBold, Microsoft JhengHei" font-size="26.764px" letter-spacing="0.08em" transform="translate(379.466 7651.824)">
+            <tspan x="-56.74" y="0">更多了解</tspan><tspan x="-85.645" y="42.564">伊甸身障服務</tspan>
+        </text>
+    </g>
+</svg>

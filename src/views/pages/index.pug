@@ -1,0 +1,66 @@
+extends ../includes/_layout.pug
+
+block title
+    title 就愛購
+
+block scss
+    link(rel='stylesheet', href= public +'/lib/styles/swiper.min.css')
+
+
+block main
+    div#app
+        section#banner
+            img.logo_friendly(src=assets+"/images/logo_friendly.svg", alt="")
+
+            .bg_orange
+                .text.f_white
+                    h1 伊7'友善 讓愛無礙
+                    h3.f19 在台灣，每20個人就有一位是身心障礙者，在生活中，他們除了需要面對自身障礙所帶來的考驗外，就連生活環境也處處充滿挑戰。友善，是我們可以給身心障礙朋友的溫暖。伊甸基金會愛心大使張睿家，誠摯地邀請您與我們一同響應7個友善行動任務，讓愛無礙從你、我開始做起！
+                    a(href="#") 現在開始，伊7’友善行動任務，Action >>>>>>
+                    p.f_grey.f16
+                        | 目前已有
+                        font.f_white 321456
+                        | 人一起參與友善行動，為身心障礙朋友打造有愛無礙的環境
+
+            img.ppl(src=assets+"/images/ppl.png", alt="")
+
+
+        section#about
+            img.abt_title(src=assets+"/images/about.svg")
+            .content
+                h5.f45.f_orange 為什麼是7個友善行動任務?
+                p.f20
+                    font 兩個7的手勢「      」等於一顆愛心 ♥
+                    br
+                    | 在我們生活周遭，總會遇見許多身心障礙朋友，透過一些暖心小舉動，
+                    br
+                    | 期待您與伊甸一起，給予身心障礙朋友支持，也學習如何與他們相處。
+                    br
+                    | 愛多一點，包容也多一點，期待我們能為身心障礙朋友們，
+                    br
+                    | 打造一個「有愛無礙」的友善環境與社會。
+                div
+                h5.f45.f_orange 邀請您，伊「7」響應友善行動任務!
+                p.f20 請點選下方了解7個友善任務說明，完成任務後分別按下「友善多一點，我+1」按鈕即完成響應。 也可將友善行動任務分享至您的社群平台，邀請更多朋友一起響應友善行動任務噢！
+
+        section#story
+            img.action(src=assets+"/images/action.svg", alt="")
+            div.story_item.W100(v-for="(item, idx) in stories",:id="'st_0'+idx", :key="idx")
+                img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
+                .text
+                    img(:src="'assets/images/pc/title-'+(idx+1)+'.svg'", alt="")
+                    a(href="#")
+                        | GO
+                        br
+                        | +1
+
+
+
+
+
+
+block js
+    script(src= public +'/lib/js/swiper.min.js' defer)
+    script(src= public +'/lib/js/vue@2.6.11.min.js' defer)
+    script(src= public +'/lib/js/scrollreveal.js' defer)
+    script(src=assets + '/js/index.bundle.js' defer)

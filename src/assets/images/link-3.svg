@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="207" height="288.106" viewBox="0 0 207 288.106">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="prefix__link3" transform="translate(-803.641 -7392)">
+        <circle id="prefix__Ellipse_15" cx="103.5" cy="103.5" r="103.5" fill="#c66" data-name="Ellipse 15" transform="translate(803.641 7392)"/>
+        <g id="prefix__Group_101" data-name="Group 101">
+            <path id="prefix__Path_63" d="M906.7 7451.125l-50.2 37.375h100.4z" class="prefix__cls-2" data-name="Path 63"/>
+            <path id="prefix__Path_64" d="M906.52 7452.75V7430h19.5v16.25h-19.5" class="prefix__cls-2" data-name="Path 64"/>
+            <g id="prefix__Group_100" data-name="Group 100">
+                <path id="prefix__Path_65" d="M859.57 7488.5v58.5h31.417l15.708-26v-32.5z" class="prefix__cls-2" data-name="Path 65"/>
+                <path id="prefix__Path_66" d="M953.82 7488.5v58.5H922.4l-15.7-26v-32.5z" class="prefix__cls-2" data-name="Path 66"/>
+            </g>
+        </g>
+        <text id="prefix___無障礙生活節" fill="#c66" data-name="無障礙生活節" font-family="MicrosoftJhengHeiBold, Microsoft JhengHei" font-size="26.764px" letter-spacing="0.08em" transform="translate(906.184 7673.106)">
+            <tspan x="-90.061" y="0">無障礙生活節</tspan>
+        </text>
+    </g>
+</svg>
