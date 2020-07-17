@@ -16,7 +16,9 @@ block main
                 .text.f_white
                     h1 伊7'友善 讓愛無礙
                     h3.f19 在台灣，每20個人就有一位是身心障礙者，在生活中，他們除了需要面對自身障礙所帶來的考驗外，就連生活環境也處處充滿挑戰。友善，是我們可以給身心障礙朋友的溫暖。伊甸基金會愛心大使張睿家，誠摯地邀請您與我們一同響應7個友善行動任務，讓愛無礙從你、我開始做起！
-                    a(href="#") 現在開始，伊7’友善行動任務，Action >>>>>>
+                    a(href="#")
+                        | 現在開始，伊7’友善行動任務，Action&nbsp;
+                        span >>>>>>
                     p.f_grey.f16
                         | 目前已有
                         font.f_white 321456
@@ -47,13 +49,23 @@ block main
             img.action(src=assets+"/images/action.svg", alt="")
             div.story_item.W100(v-for="(item, idx) in stories",:id="'st_0'+idx", :key="idx")
                 img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
-                .text
-                    img(:src="'assets/images/pc/title-'+(idx+1)+'.svg'", alt="")
-                    a(href="#")
-                        | GO
-                        br
-                        | +1
+                .border(:style="{'background-color':item.color }")
+                .W1366
+                    //- img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
+                    .text
+                        img(:src="'assets/images/pc/title-'+(idx+1)+'.svg'", alt="")
+                        a(href="#", :style="{'border-color':item.color, 'color': item.color }")
+                            font(:style="{'background-color':item.color }")
+                            span
+                                | GO
+                                br
+                                | +1
 
+
+        section#video
+            img.title(src=assets+"/images/title.svg", alt="")
+            img.line(src=assets+"/images/line.svg", alt="")
+            .video_wrap
 
 
 
