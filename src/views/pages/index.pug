@@ -66,6 +66,26 @@ block main
             img.title(src=assets+"/images/title.svg", alt="")
             img.line(src=assets+"/images/line.svg", alt="")
             .video_wrap
+                .main_v
+                    img.line(src=assets+"/images/pad.png", alt="")
+                    .frame
+                        iframe(width="100%",height="100%",src="https://www.youtube.com/embed/NLHHv07gKVc",frameborder="0",allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",allowfullscreen)
+                        //- img(src=assets+"/images/frame.png", alt="")
+
+                .swiper-container#video_nav
+                    .swiper-wrapper
+                        .swiper-slide(v-for="(video, index) in videos")
+                            img(:src="'assets/images/v_01.jpg'", alt="")
+                            h3.title_v {{video.title}}
+                            p.des_v {{video.des}}
+
+                    .pagination
+                        .swiper-button-prev
+                            img(src=assets+"/images/icon/arrow-left-black.svg", alt="")
+                        .swiper-button-next
+                            img(src=assets+"/images/icon/arrow-right-black.svg", alt="")
+
+
 
 
 

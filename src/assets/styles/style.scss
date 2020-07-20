@@ -258,7 +258,7 @@ p {
 
 #story {
     position: relative;
-    padding: 100px 0;
+    padding: 150px 0;
     .action {
         position: absolute;
         top: 0;
@@ -281,7 +281,7 @@ p {
         .border {
             position: absolute;
             width: 18px;
-            height: 100%;
+            height: 95%;
             top: 0;
         }
 
@@ -311,12 +311,19 @@ p {
                 left: 0;
             }
         }
+        &#st_06 {
+            .text {
+                a {
+                    top: 350px;
+                }
+            }
+        }
         .pic {
             position: absolute;
             //top: 80px;
             //height: calc(100% - 160px);
-            width: 60%;
-            top: 50%;
+            width: 65%;
+            top: 53%;
             transform: translate(0, -50%);
             -webkit-transform: translate(0, -50%);
             -moz-transform: translate(0, -50%);
@@ -327,7 +334,7 @@ p {
             position: relative;
             text-align: left;
             z-index: 5;
-            margin: 50px 0;
+            margin: 40px 0 60px;
             width: 50%;
             img {
                 max-width: 100%;
@@ -336,8 +343,8 @@ p {
                 width: 172px;
                 height: 172px;
                 position: absolute;
-                top: -40px;
-                right: 20px;
+                top: -30px;
+                right: 38px;
                 border: 1px solid #000;
                 border-radius: 50%;
                 -webkit-border-radius: 50%;
@@ -401,9 +408,40 @@ p {
     .video_wrap {
         background-color: #e6e6e6;
         margin-top: -80px;
-        padding: 50px 30px;
+        padding: 65px 30px;
         position: relative;
         z-index: 2;
+        .main_v {
+            max-width: 860px;
+            margin: 0 auto;
+            position: relative;
+            img {
+                width: 100%;
+            }
+            .frame {
+                position: absolute;
+                top: 49%;
+                left: 48%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                width: 88%;
+                height: 86%;
+                background-color: green;
+            }
+        }
+    }
+    #video_nav {
+        max-width: 980px;
+        margin: 0 auto 30px;
+    }
+    .swiper-slide {
+        padding: 0 14px;
+        img {
+            width: 100%;
+        }
     }
 }
 .swiper-button-next,
