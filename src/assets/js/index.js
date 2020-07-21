@@ -4,6 +4,7 @@ import mode from './modules/mode';
 new Vue({
     el: '#app',
     data: {
+        isMobile: true,
         stories: [
             {
                 des:
@@ -75,20 +76,50 @@ new Vue({
                     '那些看得見，不，透過 相互的理解，用心感受，縮小彼此之間無形的距離，當我們在一起，就是一個家…',
             },
         ],
+        swiper: null,
+        sliderOption: {
+            // slidesPerView: 5,
+            // direction: 'vertical',
+            // autoHeight: true,
+            // loop: false,
+            slidesPerView: 4,
+            direction: 'horizontal',
+            autoHeight: false,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // breakpoints: {
+            //     599: {
+            //         slidesPerView: 4,
+            //         direction: 'horizontal',
+            //         autoHeight: false,
+            //         loop: true,
+            //     },
+            // },
+        },
     },
     mounted: function () {
         mode();
+        this.detectScreen();
         this.$nextTick(() => {
             ScrollReveal().reveal('.scr');
-
-            var swiper = new Swiper('.swiper-container', {
-                slidesPerView: 4,
-                loop: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            });
+            // window.addEventListener('resize', this.detectScreen);
         });
+    },
+    methods: {
+        detectScreen() {
+            if (window.innerWidth >= 600 && this.isMobile) {
+                this.isMobile = false;
+                this.swiper = new Swiper(
+                    '.swiper-container',
+                    this.sliderOption
+                );
+            } else if (window.innerWidth < 600 && !this.isMobile) {
+                this.isMobile = true;
+                // this.swiper.destroy();
+            }
+        },
     },
 });
