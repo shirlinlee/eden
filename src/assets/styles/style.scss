@@ -17,6 +17,14 @@ body {
     font-family: arial, 'Microsoft JhengHei', '微軟正黑體', sans-serif !important;
 }
 
+.pc {
+    display: inline-block;
+}
+
+.mb {
+    display: none;
+}
+
 header {
     width: 100%;
     position: absolute;
@@ -30,12 +38,21 @@ header {
     img {
         float: right;
         margin: 50px 35px;
+        @include under-mobile {
+            margin: 22px 18px;
+            width: 70px;
+        }
     }
 }
 
 footer {
     line-height: 1.2;
     padding: 16px 20px;
+    letter-spacing: 1px;
+    @include under-mobile {
+        font-size: 10px;
+        line-height: 1.6;
+    }
 }
 
 hr {
@@ -124,12 +141,20 @@ p {
     position: relative;
     height: 100vh;
     width: 100%;
+    @include under-mobile {
+        height: initial;
+        padding-top: 297px;
+    }
     .logo_friendly {
         position: absolute;
         left: 40px;
         top: 2.5%;
         height: 15%;
         max-height: 127px;
+        @include under-mobile {
+            max-height: 65px;
+            left: 25px;
+        }
     }
     .bg_orange {
         position: absolute;
@@ -139,10 +164,26 @@ p {
         left: 0;
         padding: 40px;
         text-align: left;
+        @include under-mobile {
+            position: relative;
+            width: calc(100% - 30px);
+            height: initial;
+            padding: 25px 35px;
+            bottom: initial;
+        }
         .text {
             position: absolute;
             top: 50%;
             transform: translate(0, -50%);
+            @include under-mobile {
+                position: relative;
+                top: initial;
+                transform: initial;
+                -webkit-transform: initial;
+                -moz-transform: initial;
+                -ms-transform: initial;
+                -o-transform: initial;
+            }
         }
         h1 {
             font-size: 55px;
@@ -150,6 +191,11 @@ p {
             padding-bottom: 30px;
             margin-bottom: 30px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            @include under-mobile {
+                font-size: 29px;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+            }
         }
         h3 {
             font-size: 16px;
@@ -168,6 +214,9 @@ p {
             @media screen and (max-width: 1000px) {
                 font-size: 16px;
                 letter-spacing: 0;
+            }
+            @include under-mobile {
+                width: 100%;
             }
         }
         a {
@@ -210,14 +259,24 @@ p {
         }
     }
 
-    > img {
+    .ppl {
         bottom: 0;
         max-width: 50%;
         position: absolute;
         z-index: 0;
         right: 8%;
         max-height: 95vh;
-        @media screen and (max-width: 599px) {
+        @include under-mobile {
+            //position: relative;
+            bottom: initial;
+            max-width: 205px;
+            top: 15px;
+            right: 50%;
+            transform: translate(50%, 0);
+            -moz-transform: translate(50%, 0);
+            -ms-transform: translate(50%, 0);
+            -o-transform: translate(50%, 0);
+            -webkit-transform: translate(50%, 0);
         }
     }
 }
@@ -442,11 +501,68 @@ p {
         position: relative;
         padding: 0 45px;
     }
+    .swiper-wrapper {
+        @include under-mobile {
+            display: block !important;
+        }
+    }
     .swiper-slide {
         text-align: left;
         padding: 0 14px;
+
         img {
             width: 100%;
+        }
+    }
+}
+
+#Link {
+    padding: 65px 30px 55px;
+    @include under-mobile {
+        padding: 35px 30px 0;
+    }
+    div {
+        max-width: 1200px;
+        width: 100%;
+        display: inline-block;
+    }
+    .links {
+        width: 107px;
+        float: left;
+        margin-left: 20px;
+        margin-top: -105px;
+        @include under-mobile {
+            float: none;
+            margin: 0 auto 28px;
+            width: 109px;
+        }
+    }
+    ul {
+        width: calc(100% - 140px);
+        margin-right: -20px;
+        float: right;
+        display: inline-block;
+        @include under-mobile {
+            float: none;
+            width: 100%;
+        }
+    }
+    li {
+        width: 25%;
+        padding: 0 28px;
+        float: left;
+        display: inline-block;
+        @include under-mobile {
+            width: 50%;
+            height: 155px;
+            margin-bottom: 30px;
+            padding: 0;
+        }
+        img {
+            width: 100%;
+            @include under-mobile {
+                width: 103px;
+            }
         }
         h3 {
             margin: 15px 0;
@@ -498,7 +614,14 @@ p {
     bottom: 30px !important;
 }
 
-@media screen and (max-width: 599px) {
+@include under-mobile {
+    .pc {
+        display: none;
+    }
+
+    .mb {
+        display: inline-block;
+    }
     .W50 {
         width: 100%;
         display: inline-block;
