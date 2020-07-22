@@ -269,8 +269,8 @@ p {
         @include under-mobile {
             //position: relative;
             bottom: initial;
+            max-width: 205px;
             top: 15px;
-            height: 282px;
             right: 50%;
             transform: translate(50%, 0);
             -moz-transform: translate(50%, 0);
