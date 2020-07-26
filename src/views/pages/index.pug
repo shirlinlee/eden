@@ -1,7 +1,7 @@
 extends ../includes/_layout.pug
 
 block title
-    title 就愛購
+    title 伊7'友善 讓愛無礙
 
 block scss
     link(rel='stylesheet', href= public +'/lib/styles/swiper.min.css')
@@ -29,7 +29,7 @@ block main
 
 
         section#about
-            img.abt_title(src=assets+"/images/about.svg")
+            img.abt_title.pc(src=assets+"/images/about.svg")
             .content
                 h5.f45.f_orange 為什麼是7個友善行動任務?
                 p.f19
@@ -43,7 +43,10 @@ block main
                     br
                     | 打造一個「有愛無礙」的友善環境與社會。
                 div
-                h5.f45.f_orange 邀請您，伊「7」響應友善行動任務!
+                h5.f45.f_orange
+                    | 邀請您，
+                    br.mb
+                    | 伊「7」響應友善行動任務!
                 p.f19
                     | 請點選下方了解7個友善任務說明，完成任務後分別按下「友善多一點，我+1」按鈕即完成響應。
                     br.pc
@@ -52,7 +55,6 @@ block main
         section#story
             img.action(src=assets+"/images/action.svg", alt="")
             div.story_item.W100(v-for="(item, idx) in stories",:id="'st_0'+idx", :key="idx")
-                img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
                 .border(:style="{'background-color':item.color }")
                 .W1366
                     //- img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
@@ -65,6 +67,7 @@ block main
                                 br
                                 | +1
 
+                img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
 
         section#video
             img.title(src=assets+"/images/title.svg", alt="")

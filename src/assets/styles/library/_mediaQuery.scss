@@ -22,6 +22,12 @@
     }
 }
 
+@mixin upper-mobile() {
+    @media screen and (min-width: 600px) {
+        @content;
+    }
+}
+
 @mixin under-pad() {
     @media screen and (max-width: 768px) {
         @content;

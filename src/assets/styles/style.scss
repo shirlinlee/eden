@@ -8,6 +8,10 @@ body {
     text-align: center;
     color: #111111;
 }
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
 
 * {
     -webkit-touch-callout: none;
@@ -154,6 +158,7 @@ p {
         @include under-mobile {
             max-height: 65px;
             left: 25px;
+            top: 25px;
         }
     }
     .bg_orange {
@@ -168,7 +173,7 @@ p {
             position: relative;
             width: calc(100% - 30px);
             height: initial;
-            padding: 25px 35px;
+            padding: 25px 35px 25px 10px;
             bottom: initial;
         }
         .comma {
@@ -181,6 +186,13 @@ p {
             -ms-transform: translate(0, -90%);
             -o-transform: translate(0, -90%);
             width: 100px;
+            @include under-mobile {
+                width: 38px;
+                top: -138px;
+                transform: none;
+                left: 25%;
+                z-index: 40;
+            }
         }
         .text {
             position: absolute;
@@ -205,9 +217,10 @@ p {
             letter-spacing: 9px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.4);
             @include under-mobile {
-                font-size: 29px;
+                font-size: 28px;
                 padding-bottom: 15px;
                 margin-bottom: 15px;
+                letter-spacing: 5px;
             }
         }
         h3 {
@@ -230,6 +243,10 @@ p {
             }
             @include under-mobile {
                 width: 100%;
+                background-size: 13px;
+                font-size: 11px;
+                line-height: 22px;
+                padding: 15px 13px 25px;
             }
         }
         a {
@@ -261,12 +278,22 @@ p {
                     }
                 }
             }
+            @include under-mobile {
+                letter-spacing: 0px;
+                font-size: 12px;
+                max-width: 100%;
+                padding: 6px 15px;
+            }
         }
         p {
             display: block;
             max-width: 70%;
             font-size: 16px;
             letter-spacing: 1.5px;
+            @include under-mobile {
+                font-size: 11px;
+                max-width: 100%;
+            }
             font {
                 padding: 0 4px;
                 font-size: 21px;
@@ -287,7 +314,7 @@ p {
             bottom: initial;
             max-width: 205px;
             top: 15px;
-            right: 50%;
+            right: 47%;
             transform: translate(50%, 0);
             -moz-transform: translate(50%, 0);
             -ms-transform: translate(50%, 0);
@@ -304,6 +331,11 @@ p {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    @include under-mobile {
+        padding: 60px 20px 80px;
+        background-repeat: repeat;
+        background-image: url($assets + '/images/background-about.jpg');
+    }
     .abt_title {
         position: absolute;
         left: 54px;
@@ -316,20 +348,35 @@ p {
         margin-left: 19%;
         text-align: left;
         font-weight: bold;
-
+        @include under-mobile {
+            width: 100%;
+            margin-left: 0%;
+            text-align: center;
+        }
         h5 {
             letter-spacing: 7px;
             margin-bottom: 35px;
             line-height: 1.2;
+            @include under-mobile {
+                font-size: 21px;
+                letter-spacing: 3px;
+                line-height: 1.4;
+            }
         }
         p {
             color: #666;
             display: block;
             letter-spacing: 1.5px;
             line-height: 1.7;
+            @include under-mobile {
+                font-size: 11px;
+            }
         }
         > div {
             height: 110px;
+            @include under-mobile {
+                height: 60px;
+            }
         }
     }
 }
@@ -337,6 +384,9 @@ p {
 #story {
     position: relative;
     padding: 150px 0;
+    @include under-mobile {
+        padding: 70px 0;
+    }
     .action {
         position: absolute;
         top: 0;
@@ -346,11 +396,18 @@ p {
         -moz-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
+        @include under-mobile {
+            width: 45px;
+        }
     }
     .story_item {
         padding: 80px 50px;
         margin-bottom: 100px;
         position: relative;
+        @include under-mobile {
+            padding: 0 50px 75vw;
+            margin-bottom: 40px;
+        }
         .W1366 {
             position: relative;
             display: inline-block;
@@ -361,11 +418,18 @@ p {
             width: 18px;
             height: 95%;
             top: 0;
+            z-index: 5;
+            @include under-mobile {
+                width: 9px;
+            }
         }
 
         &:nth-child(2n) {
             .pic {
-                left: -8%;
+                left: -13%;
+                @include under-mobile {
+                    left: -10%;
+                }
             }
             .text {
                 float: right;
@@ -377,28 +441,89 @@ p {
         &:nth-child(2n + 1) {
             .pic {
                 right: -5%;
+                @include under-mobile {
+                    right: -8%;
+                }
             }
             .text {
                 float: left;
                 img {
                     max-width: 100%;
                     margin-left: 10%;
+                    @include under-mobile {
+                        margin-left: 3%;
+                    }
                 }
                 a {
                     right: 15px;
+                    @include under-mobile {
+                        right: -5px;
+                    }
                 }
             }
             .border {
                 left: 0;
             }
         }
-        &#st_06 {
+        &#st_00 {
+            .pic {
+                left: -11%;
+            }
+        }
+        &#st_02 {
             .text {
-                a {
-                    top: 250px;
+                img {
+                    @include under-mobile {
+                        width: 80%;
+                    }
+                }
+            }
+            .pic {
+                left: -13%;
+            }
+        }
+        &#st_03 {
+            .text {
+                img {
+                    @include under-mobile {
+                        width: 70%;
+                    }
                 }
             }
         }
+        &#st_04 {
+            .text {
+                img {
+                    @include under-mobile {
+                        width: 70%;
+                    }
+                }
+            }
+        }
+        &#st_05 {
+            .text {
+                img {
+                    @include under-mobile {
+                        width: 66%;
+                    }
+                }
+            }
+        }
+        &#st_06 {
+            .text {
+                a {
+                    @include upper-mobile {
+                        top: 250px;
+                    }
+                }
+                img {
+                    @include under-mobile {
+                        width: 66%;
+                    }
+                }
+            }
+        }
+
         .pic {
             position: absolute;
             //top: 80px;
@@ -410,14 +535,24 @@ p {
             -moz-transform: translate(0, -50%);
             -ms-transform: translate(0, -50%);
             -o-transform: translate(0, -50%);
+            @include under-mobile {
+                width: 118%;
+                top: initial;
+                bottom: 0;
+                transform: translate(0, 0);
+            }
         }
         .text {
             position: relative;
             text-align: left;
             z-index: 5;
-            margin: 60px 0 60px;
+            margin: 35px 0 60px;
             width: 50%;
             padding-left: 1%;
+            @include under-mobile {
+                width: 100%;
+                float: none;
+            }
             img {
                 max-width: 100%;
             }
@@ -441,6 +576,15 @@ p {
                 font-weight: 100;
                 text-decoration: none;
                 font-family: 'MicrosoftJhengHeiRegular';
+                @include under-mobile {
+                    width: 86px;
+                    height: 86px;
+                    font-size: 18px;
+                    padding: 20px 0;
+                    line-height: 25px;
+                    top: -25px;
+                    right: -5px;
+                }
                 * {
                     transition: all 0.3s;
                     -webkit-transition: all 0.3s;
@@ -486,6 +630,17 @@ p {
     > img {
         display: block;
         margin: 0 auto 30px;
+        @include under-mobile {
+            margin: 0 auto 10px;
+            &.title {
+                width: 137px;
+            }
+            &.line {
+                position: relative;
+                z-index: 10;
+                width: 30px;
+            }
+        }
     }
     .video_wrap {
         background-color: #e6e6e6;
@@ -493,6 +648,10 @@ p {
         padding: 65px 30px;
         position: relative;
         z-index: 2;
+        @include under-mobile {
+            margin-top: -40px;
+            padding-bottom: 5px;
+        }
         .main_v {
             max-width: 860px;
             margin: 0 auto;
@@ -500,6 +659,7 @@ p {
             img {
                 width: 100%;
             }
+
             .frame {
                 position: absolute;
                 top: 49%;
@@ -516,10 +676,15 @@ p {
         }
     }
     #video_nav {
-        max-width: 1060px;
-        margin: 50px auto 30px;
+        max-width: 1100px;
+        margin: 40px auto 30px;
         position: relative;
-        padding: 0 45px;
+        padding: 0 25px;
+        @include under-mobile {
+            padding: 0;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
     }
     .swiper-wrapper {
         @include under-mobile {
@@ -529,9 +694,38 @@ p {
     .swiper-slide {
         text-align: left;
         padding: 0 14px;
-
+        @include under-mobile {
+            padding: 0;
+            min-height: 90px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 155px;
+        }
         img {
             width: 100%;
+            @include under-mobile {
+                width: 140px;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+        .title_v {
+            margin: 10px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #4d4d4d;
+            @include under-mobile {
+                font-size: 13px;
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+        }
+        .des_v {
+            line-height: 1.4;
+            letter-spacing: 1px;
+            @include under-mobile {
+                font-size: 11px;
+            }
         }
     }
 }
@@ -565,6 +759,7 @@ p {
         @include under-mobile {
             float: none;
             width: 100%;
+            margin-right: 0;
         }
     }
     li {
@@ -596,10 +791,14 @@ p {
         }
     }
 }
+
 .pagination {
     height: 100%;
     display: inline-block;
     padding: 0 30px;
+    @include under-mobile {
+        display: none;
+    }
 }
 
 .swiper-button-next,
@@ -646,5 +845,16 @@ p {
         width: 100%;
         display: inline-block;
         float: none;
+    }
+    .f16 {
+        font-size: 11px;
+    }
+
+    .f19 {
+        font-size: 15px;
+    }
+
+    .f45 {
+        font-size: 28px;
     }
 }
