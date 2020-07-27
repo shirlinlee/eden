@@ -14,6 +14,11 @@ footer {
     }
 }
 
+.logo,
+footer {
+    display: none;
+}
+
 #story_page {
     position: absolute;
     top: 50%;
@@ -95,6 +100,8 @@ footer {
             right: -60px;
             padding: 8px;
             border-radius: 50%;
+            transition: all 0.5s;
+            cursor: pointer;
             @include under-mobile {
                 position: relative;
                 margin: 35px auto 28px;
@@ -102,6 +109,16 @@ footer {
                 bottom: initial;
                 width: 106px;
                 height: 106px;
+            }
+            @include upper-pad {
+                &:hover {
+                    transform: scale(1.02);
+                    span {
+                        border-color: #fff;
+                        transition: all 0.5s;
+                        font-weight: bold;
+                    }
+                }
             }
             span {
                 text-align: center;
@@ -168,7 +185,17 @@ footer {
             display: none;
         }
     }
-    &.st_01 {
+
+    .back {
+        position: absolute;
+        right: 57px;
+        top: -57px;
+        transform: translate(0, -100%);
+        width: 48px;
+        cursor: pointer;
+    }
+
+    &.st_00 {
         .title {
             max-width: 480px;
         }
