@@ -9,31 +9,30 @@ block scss
 
 
 block main
-    div#app
-        section#story_page.W1366.st_01(style="border-color: #6699cc;")
+    div#storyPage
+        section#story_page.W1366(:class="'st_0'+story_type")
             .left
-                img.pc(src=assets+"/images/p1/img_01_pc.jpg", alt="")
-                img.mb(src=assets+"/images/p1/img_01_mb.jpg", alt="")
+                img.pc(:src="'assets/images/p'+(story_type)+'/img_01_pc.jpg'", alt="")
+                img.mb(:src="'assets/images/p'+(story_type)+'/img_01_mb.jpg'", alt="")
 
                 img.line(src=assets+"/images/line.svg", alt="")
 
             .main_des
-                img.title.pc(src=assets+"/images/p1/title_pc.svg", alt="")
-                img.title.mb(src=assets+"/images/p1/title_mb.svg", alt="")
+                img.title.pc(:src="'assets/images/p'+(story_type)+'/title_pc.svg'", alt="")
+                img.title.mb(:src="'assets/images/p'+(story_type)+'/title_mb.svg'", alt="")
+                p(v-html="story_individual.des")
+                    //- | 發揮我的影響力！
+                    //- br
+                    //- | 邀請您與家人或朋友，一人一個7拼出友善愛心手勢，
+                    //- br
+                    //- | 拍下照片上傳您的社群並加入hashtag
+                    //- a #和我伊7友善
+                    //- a #讓愛無礙，
+                    //- br
+                    //- | 讓友善行動任務擴散到城市的每個角落。
 
-                p
-                    | 發揮我的影響力！
-                    br
-                    | 邀請您與家人或朋友，一人一個7拼出友善愛心手勢，
-                    br
-                    | 拍下照片上傳您的社群並加入hashtag
-                    a #和我伊7友善
-                    a #讓愛無礙，
-                    br
-                    | 讓友善行動任務擴散到城市的每個角落。
 
-
-                a.vote(style="background: #6699cc;")
+                a.vote(:style="{'background': story_individual.color}")
                     span
                         | 友善多一點
                         br
@@ -43,12 +42,12 @@ block main
                     a.share(href="") 分享
                     p.f_b
                         | 目前已有
-                        font 21345
-                        | 個人獻出暖暖的友善愛心。
+                        font(:style="{'color': story_individual.color}") 21345
+                        | 個人{{  story_individual.share_text }}
 
 
             .right
-                img(src=assets+"/images/p1/img_02_pc.jpg", alt="")
+                img(:src="'assets/images/p'+(story_type)+'/img_02_pc.jpg'", alt="")
 
 
 
