@@ -10,16 +10,16 @@ block scss
 
 block main
     div#storyPage
-        section#story_page.W1366(:class="'st_0'+story_type")
+        section#story_page.W1366(:class="'st_0'+story_index")
             .left
-                img.pc(:src="'assets/images/p'+(story_type)+'/img_01_pc.jpg'", alt="")
-                img.mb(:src="'assets/images/p'+(story_type)+'/img_01_mb.jpg'", alt="")
+                img.pc(:src="'assets/images/p'+(story_index)+'/img_01_pc.jpg'", alt="")
+                img.mb(:src="'assets/images/p'+(story_index)+'/img_01_mb.jpg'", alt="")
 
                 img.line(src=assets+"/images/line.svg", alt="")
 
             .main_des
-                img.title.pc(:src="'assets/images/p'+(story_type)+'/title_pc.svg'", alt="")
-                img.title.mb(:src="'assets/images/p'+(story_type)+'/title_mb.svg'", alt="")
+                img.title.pc(:src="'assets/images/p'+(story_index)+'/title_pc.svg'", alt="")
+                img.title.mb(:src="'assets/images/p'+(story_index)+'/title_mb.svg'", alt="")
                 p(v-html="story_individual.des")
                     //- | 發揮我的影響力！
                     //- br
@@ -32,24 +32,34 @@ block main
                     //- | 讓友善行動任務擴散到城市的每個角落。
 
 
-                a.vote(:style="{'background': story_individual.color}")
+                a.vote(:style="{'background': story_individual.color }", :class="{ 'disable': !canVote }", @click="voting")
                     span
                         | 友善多一點
                         br
                         | 我+1
 
                 .bottom
-                    a.share(href="") 分享
+                    a.share(href="", @click="shareToFB") 分享
+                    a.goMall(href="https://edenmall.eden.org.tw/", target="_blank", :style="{'color': story_individual.color,'border-color': story_individual.color, 'display': (story_individual.story_index===4)? 'inline-block': 'none' }") 購買產品可上伊甸公益MaLL
                     p.f_b
                         | 目前已有
-                        font(:style="{'color': story_individual.color}") 21345
+                        font(:style="{'color': story_individual.color}") {{ story_voting_num }}
                         | 個人{{  story_individual.share_text }}
 
 
             .right
-                img(:src="'assets/images/p'+(story_type)+'/img_02_pc.jpg'", alt="")
+                img(:src="'assets/images/p'+(story_index)+'/img_02_pc.jpg'", alt="")
 
-            img.back(src=assets+"/images/back.svg", alt="")
+            a(href="/")
+                img.back(src=assets+"/images/back.svg", alt="")
+
+
+        .lb_wrapper
+            .lb(:style="{'border-color': story_individual.color }")
+                p {{story_individual.lb_text}}
+                a.lb_chat(href="http://fb.high5.ai/9vzhc1c9Y", target="_blank") 來聊聊吧
+                a.lb_close(:style="{'border-color': story_individual.color, 'color':  story_individual.color }") X
+
 
 
 

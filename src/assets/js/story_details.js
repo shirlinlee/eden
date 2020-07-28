@@ -6,6 +6,7 @@ module.exports = {
             vote_text: '個人獻出暖暖的友善愛心。',
             color: '#6599cd',
             share_text: '獻出暖暖的友善愛心。',
+            lb_text: '嗨，你的愛心這麼暖，這麼美，要繼續「伊7」友善下去噢！',
         },
         {
             des:
@@ -13,6 +14,7 @@ module.exports = {
             vote_text: '個人送給身心障礙朋友微笑小禮物了！',
             color: '#ffcc33',
             share_text: '送給身心障礙朋友微笑小禮物了！',
+            lb_text: '嗨，你的愛心這麼暖，這麼美，要繼續「伊7」友善下去噢！',
         },
         {
             des:
@@ -20,6 +22,7 @@ module.exports = {
             vote_text: '個人成為最carry的神隊友！',
             color: '#669833',
             share_text: '成為最carry的神隊友！',
+            lb_text: '嗨，你的愛心這麼暖，這麼美，要繼續「伊7」友善下去噢！',
         },
         {
             des:
@@ -27,6 +30,7 @@ module.exports = {
             vote_text: '個人用行動支持身障朋友的用心。',
             color: '#990434',
             share_text: '用行動支持身障朋友的用心。',
+            lb_text: '嗨，你的愛心這麼暖，這麼美，要繼續「伊7」友善下去噢！',
         },
         {
             des:
@@ -34,6 +38,7 @@ module.exports = {
             vote_text: '個人體貼讓出無障礙設施給身障朋友。',
             color: '#ff9999',
             share_text: '體貼讓出無障礙設施給身障朋友。',
+            lb_text: '嗨，你的愛心這麼暖，這麼美，要繼續「伊7」友善下去噢！',
         },
         {
             des:
@@ -41,6 +46,7 @@ module.exports = {
             vote_text: '個人願意換位思考，善待身心障礙朋友。',
             color: '#cccc65',
             share_text: '願意換位思考，善待身心障礙朋友。',
+            lb_text: '嗨，你的愛心這麼暖，這麼美，要繼續「伊7」友善下去噢！',
         },
         {
             des:
@@ -48,6 +54,7 @@ module.exports = {
             vote_text: '個人帶給身心障礙朋友正面的鼓勵！',
             color: '#66cccc',
             share_text: '帶給身心障礙朋友正面的鼓勵！',
+            lb_text: '嗨，你的愛心這麼暖，這麼美，要繼續「伊7」友善下去噢！',
         },
     ],
 };
