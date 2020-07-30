@@ -14,15 +14,15 @@ block main
 
             .bg_orange
                 img.comma(src=assets+"/images/dot.svg", alt="")
-                .text.f_white
+                .text.f_white(:class="{'show': isloaded}")
                     h1 伊7'友善 讓愛無礙
                     h3.f19 在台灣，每20個人就有一位是身心障礙者，在生活中，他們除了需要面對自身障礙所帶來的考驗外，就連生活環境也處處充滿挑戰。友善，是我們可以給身心障礙朋友的溫暖。伊甸基金會愛心大使張睿家，誠摯地邀請您與我們一同響應7個友善行動任務，讓愛無礙從你、我開始做起！
-                    a(href="#")
+                    a(href="javascript:;", @click="ScrollHandler('story')")
                         | 現在開始，伊7’友善行動任務，Action&nbsp;
                         span >>>>>>
                     p.f_grey.f16
                         | 目前已有
-                        font.f_white 321456
+                        font.f_white {{ totalVote }}
                         | 人一起參與友善行動，為身心障礙朋友打造有愛無礙的環境
 
             img.ppl(src=assets+"/images/ppl.png", alt="")
@@ -30,7 +30,7 @@ block main
 
         section#about
             img.abt_title.pc(src=assets+"/images/about.svg")
-            .content
+            .content.scr
                 h5.f45.f_orange 為什麼是7個友善行動任務?
                 p.f19
                     font 兩個7的手勢「      」等於一顆愛心 ♥
@@ -52,15 +52,15 @@ block main
                     br.pc
                     | 也可將友善行動任務分享至您的社群平台，邀請更多朋友一起響應友善行動任務噢！
 
-        section#story
+        section#story(ref="story")
             img.action(src=assets+"/images/action.svg", alt="")
-            div.story_item.W100(v-for="(item, idx) in stories",:id="'st_0'+idx", :key="idx")
+            div.story_item.W100.scr(v-for="(item, idx) in stories",:id="'st_0'+idx", :key="idx")
                 .border(:style="{'background-color':item.color }")
                 .W1366
                     //- img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
                     .text
                         img(:src="'assets/images/pc/title-'+(idx+1)+'.svg'", alt="")
-                        a(href="#", :style="{'border-color':item.color, 'color': item.color }")
+                        a(:href="'/story.html#0'+(idx+1)", :style="{'border-color':item.color, 'color': item.color }")
                             font(:style="{'background-color':item.color }")
                             span
                                 | GO
@@ -73,15 +73,16 @@ block main
             img.title(src=assets+"/images/title.svg", alt="")
             img.line(src=assets+"/images/line.svg", alt="")
             .video_wrap
-                .main_v
+                .main_v.scr
                     img.line(src=assets+"/images/pad.png", alt="")
                     .frame
                         iframe(width="100%",height="100%",:src="'https://www.youtube.com/embed/'+ currentVideo",frameborder="0",allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",allowfullscreen)
                         //- img(src=assets+"/images/frame.png", alt="")
 
-                .swiper-container#video_nav
+                .swiper-container#video_nav.scr
                     .swiper-wrapper
-                        .swiper-slide(v-for="(video, index) in videos", @click="videoHandler(video.youtubeId)")
+                        .swiper-slide(v-for="(video, index) in videos", :data-id="video.youtubeId")
+                            //-  ,@click="videoHandler(video.youtubeId)"
                             img(:src="'assets/images/v'+ video.img +'.jpg'", alt="")
                             h3.title_v {{video.title}}
                             p.des_v {{video.des}}
@@ -120,7 +121,8 @@ block main
 
 
 block js
+    script(src= public +'/lib/js/scrollreveal.js' defer)
     script(src= public +'/lib/js/swiper.min.js' defer)
     script(src= public +'/lib/js/vue@2.6.11.min.js' defer)
-    script(src= public +'/lib/js/scrollreveal.js' defer)
+    script(src=public + '/lib/animatedScrollTo.js' defer)
     script(src=assets + '/js/index.bundle.js' defer)

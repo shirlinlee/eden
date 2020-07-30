@@ -11,6 +11,7 @@ body {
 html {
     width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -199,6 +200,15 @@ p {
             top: 52%;
             left: 7.5%;
             transform: translate(0, -50%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            -webkit-transition: opacity 0.5s;
+            -moz-transition: opacity 0.5s;
+            -ms-transition: opacity 0.5s;
+            -o-transition: opacity 0.5s;
+            &.show {
+                opacity: 1;
+            }
             @include under-mobile {
                 position: relative;
                 top: initial;

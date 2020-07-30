@@ -5,7 +5,7 @@ module.exports = {
     domain: 'http://e9459eab3953.ngrok.io',
     domain_api: 'https://e7friendly.eden.org.tw',
     cookie_expire: {
-        expires: 7,
+        expires: 1, // 一天清除
         path: '',
     },
 };

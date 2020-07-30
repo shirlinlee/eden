@@ -1,11 +1,15 @@
 import mode from './modules/mode';
+import qs from 'qs';
 import { story_details as stories } from './story_details';
+import { domain, domain_api, cookie_expire } from './env';
 
 new Vue({
     el: '#app',
     data: {
+        isloaded: false,
         isMobile: true,
         stories,
+        totalVote: 0,
         videos: [
             {
                 title: '【 也許，你不認識他們 】',
@@ -45,10 +49,6 @@ new Vue({
         ],
         swiper: null,
         sliderOption: {
-            // slidesPerView: 5,
-            // direction: 'vertical',
-            // autoHeight: true,
-            // loop: false,
             autoplay: {
                 delay: 5000,
             },
@@ -71,17 +71,66 @@ new Vue({
             // },
         },
         currentVideo: 'NLHHv07gKVc',
+        revealOption: {
+            distance: '80px',
+            duration: 1000,
+            delay: 200,
+            // reset: true,
+            // scale: 1,
+        },
     },
     mounted: function () {
         mode();
-        console.log(stories);
+        // console.log(stories);
         this.detectScreen();
+
         this.$nextTick(() => {
-            ScrollReveal().reveal('.scr');
-            // window.addEventListener('resize', this.detectScreen);
+            this.bindVideoHandler();
+
+            /// 從api取得此頁面投票數
+            this.getVoteNumber();
+
+            setTimeout(() => {
+                this.isloaded = true;
+                window.sr = ScrollReveal();
+                sr.reveal('.scr', this.revealOption);
+            }, 500);
         });
     },
     methods: {
+        getVoteNumber() {
+            axios
+                .get(`${domain_api}/api/GetPersons.php`)
+                .then((response) => {
+                    const {
+                        data: { totalcounts },
+                        status,
+                    } = response;
+                    if (status === 200) {
+                        this.totalVote = totalcounts;
+                    } else {
+                        console.warn(error);
+                    }
+                })
+                .catch(function (error) {
+                    // 请求失败处理
+                    console.warn(error);
+                });
+        },
+        bindVideoHandler() {
+            const elements = document.getElementsByClassName('swiper-slide');
+            const $this = this;
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].addEventListener(
+                    'click',
+                    function () {
+                        let id = this.getAttribute('data-id');
+                        $this.currentVideo = id;
+                    },
+                    false
+                );
+            }
+        },
         detectScreen() {
             if (window.innerWidth >= 600 && this.isMobile) {
                 this.isMobile = false;
@@ -94,9 +143,15 @@ new Vue({
                 // this.swiper.destroy();
             }
         },
-        videoHandler(id) {
-            console.log(id);
-            this.currentVideo = id;
+        ScrollHandler(element, to, duration) {
+            window.scroll({
+                top: this.$refs[element].offsetTop,
+                behavior: 'smooth',
+            });
         },
+        // videoHandler(id) {
+        //     console.log(id);
+        //     this.currentVideo = id;
+        // },
     },
 });

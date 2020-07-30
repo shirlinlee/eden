@@ -1,4 +1,5 @@
 import mode from './modules/mode';
+import qs from 'qs';
 import { story_details as stories } from './story_details';
 import { domain, domain_api, cookie_expire } from './env';
 
@@ -9,7 +10,8 @@ new Vue({
         story_index: 0,
         story_individual: {},
         story_voting_num: 0,
-        canVote: null,
+        canVote: true,
+        showLb: false,
     },
     created: function () {
         // 初始化story需呈現內容
@@ -22,16 +24,14 @@ new Vue({
         }
         this.story_individual = this.stories[this.story_index];
 
-        // 從cookie取得此頁面投票數
-        const getCookieNum = Cookies.get(`story${this.story_index}`);
-        if (getCookieNum) {
-            this.story_voting_num = Number(getCookieNum);
-        } else {
-            // cookie失效則呼叫api
-            this.getVoteNumber();
-        }
+        // 從api取得此頁面投票數
+        this.getVoteNumber();
+        window.addEventListener('hashchange', () => {
+            location.reload();
+        });
     },
     mounted: function () {
+        console.log(this.story_index);
         mode();
         this.$nextTick(() => {
             // 從cookie取得是否可以投票
@@ -75,9 +75,12 @@ new Vue({
             if (this.canVote) {
                 const voted_num = this.story_voting_num + 1;
                 axios
-                    .post(`${domain_api}/api/CountPerson.php`, {
-                        type: this.story_index + 1,
-                    })
+                    .post(
+                        `${domain_api}/api/CountPerson.php`,
+                        qs.stringify({
+                            type: this.story_index + 1,
+                        })
+                    )
                     .then((response) => {
                         const {
                             data: { individual },
@@ -96,6 +99,7 @@ new Vue({
                             );
                             this.story_voting_num = this.story_voting_num + 1;
                             this.canVote = false;
+                            this.showLb = true;
                         } else {
                             console.warn(error);
                         }
@@ -122,6 +126,9 @@ new Vue({
                     console.log(response, 'fb');
                 }
             );
+        },
+        LbHandler(open) {
+            this.showLb = false;
         },
     },
 });
