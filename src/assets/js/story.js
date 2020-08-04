@@ -117,7 +117,7 @@ new Vue({
                     display: 'popup',
                     method: 'feed', //feed\share
                     link: domain,
-                    picture: `${domain}/assets/images/ppl.png`,
+                    picture: `${domain}/assets/images/share.jpg`,
                     name: "伊7'友善 讓愛無礙",
                     description:
                         '在台灣，每20個人就有一位是身心障礙者，在生活中，他們除了需要面對自身障礙所帶來的考驗外，就連生活環境也處處充滿挑戰。友善，是我們可以給身心障礙朋友的溫暖。伊甸基金會愛心大使張睿家，誠摯地邀請您與我們一同響應7個友善行動任務，讓愛無礙從你、我開始做起！',

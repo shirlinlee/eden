@@ -13,13 +13,13 @@ block main
         section#story_page.W1366(:class="'st_0'+story_index")
             .left
                 img.pc(:src="'assets/images/p'+(story_index)+'/img_01_pc.jpg'", alt="")
-                img.mb(:src="'assets/images/p'+(story_index)+'/img_01_mb.jpg'", alt="")
+                img.pad(:src="'assets/images/p'+(story_index)+'/img_01_mb.jpg'", alt="")
 
                 img.line(src=assets+"/images/line.svg", alt="")
 
             .main_des
                 img.title.pc(:src="'assets/images/p'+(story_index)+'/title_pc.svg'", alt="")
-                img.title.mb(:src="'assets/images/p'+(story_index)+'/title_mb.svg'", alt="")
+                img.title.pad(:src="'assets/images/p'+(story_index)+'/title_mb.svg'", alt="")
                 p(v-html="story_individual.des")
                     //- | 發揮我的影響力！
                     //- br

@@ -11,6 +11,7 @@ block main
     div#app
         section#banner
             img.logo_friendly(src=assets+"/images/logo_friendly.svg", alt="")
+            img.ppl_mb.mb(src=assets+"/images/ppl_mb.jpg", alt="")
 
             .bg_orange
                 img.comma(src=assets+"/images/dot.svg", alt="")
@@ -27,7 +28,7 @@ block main
                         br.mb
                         | 為身心障礙朋友打造有愛無礙的環境
 
-            img.ppl(src=assets+"/images/ppl.png", alt="")
+            img.ppl.pc(src=assets+"/images/ppl.png", alt="")
 
 
         section#about
@@ -143,5 +144,5 @@ block js
     script(src= public +'/lib/js/scrollreveal.js' defer)
     script(src= public +'/lib/js/swiper.min.js' defer)
     script(src= public +'/lib/js/vue@2.6.11.min.js' defer)
-    script(src=public + '/lib/animatedScrollTo.js' defer)
+    script(src=public + '/lib/js/animatedScrollTo.js' defer)
     script(src=assets + '/js/index.bundle.js' defer)
