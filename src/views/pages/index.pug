@@ -23,7 +23,9 @@ block main
                     p.f_grey.f16
                         | 目前已有
                         font.f_white {{ totalVote }}
-                        | 人一起參與友善行動，為身心障礙朋友打造有愛無礙的環境
+                        | 人一起參與友善行動，
+                        br.mb
+                        | 為身心障礙朋友打造有愛無礙的環境
 
             img.ppl(src=assets+"/images/ppl.png", alt="")
 
@@ -33,13 +35,22 @@ block main
             .content.scr
                 h5.f45.f_orange 為什麼是7個友善行動任務?
                 p.f19
-                    font 兩個7的手勢「      」等於一顆愛心 ♥
+                    font
+                    | 兩個7的手勢「&nbsp;
+                    img(src=assets+"/images/pointer.svg", alt="")
+                    | &nbsp;」等於一顆愛心 ♥
                     br
-                    | 在我們生活周遭，總會遇見許多身心障礙朋友，透過一些暖心小舉動，
+                    | 在我們生活周遭，總會遇見許多身心障礙朋友，
+                    br.mb
+                    | 透過一些暖心小舉動，
+                    br.pc
+                    | 期待您與伊甸一起，
+                    br.mb
+                    | 給予身心障礙朋友支持，也學習如何與他們相處。
                     br
-                    | 期待您與伊甸一起，給予身心障礙朋友支持，也學習如何與他們相處。
-                    br
-                    | 愛多一點，包容也多一點，期待我們能為身心障礙朋友們，
+                    | 愛多一點，包容也多一點，
+                    br.mb
+                    | 期待我們能為身心障礙朋友們，
                     br
                     | 打造一個「有愛無礙」的友善環境與社會。
                 div
@@ -48,9 +59,17 @@ block main
                     br.mb
                     | 伊「7」響應友善行動任務!
                 p.f19
-                    | 請點選下方了解7個友善任務說明，完成任務後分別按下「友善多一點，我+1」按鈕即完成響應。
+                    | 請點選下方了解7個友善任務說明，
+                    br.mb
+                    | 完成任務後分別按下
+                    br.mb
+                    | 「友善多一點，我+1」按鈕即完成響應。
+                    br.mb
+                    |
                     br.pc
-                    | 也可將友善行動任務分享至您的社群平台，邀請更多朋友一起響應友善行動任務噢！
+                    | 也可將友善行動任務分享至您的社群平台，
+                    br.mb
+                    | 邀請更多朋友一起響應友善行動任務噢！
 
         section#story(ref="story")
             img.action(src=assets+"/images/action.svg", alt="")
@@ -108,7 +127,7 @@ block main
                         a(href="https://reurl.cc/rxA7OE", target="_blank")
                             img(src=assets+"/images/link-2.svg", alt="")
                     li
-                        a(href="http://touchinglife.eden.org.tw", target="_blank")
+                        a(href="https://barrierfree.eden.org.tw/%e8%ba%ab%e5%bf%83%e9%9a%9c%e7%a4%99%e8%80%85%e6%9c%8d%e5%8b%99%e8%a8%88%e7%95%ab/%e7%84%a1%e9%9a%9c%e7%a4%99%e7%94%9f%e6%b4%bb%e7%af%80/", target="_blank")
                             img(src=assets+"/images/link-3.svg", alt="")
                     li
                         a(href="https://edenmall.eden.org.tw/", target="_blank")

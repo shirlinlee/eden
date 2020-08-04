@@ -174,7 +174,7 @@ p {
             position: relative;
             width: calc(100% - 30px);
             height: initial;
-            padding: 25px 35px 25px 10px;
+            padding: 30px 35px 25px 10px;
             bottom: initial;
         }
         .comma {
@@ -254,9 +254,9 @@ p {
             @include under-mobile {
                 width: 100%;
                 background-size: 13px;
-                font-size: 11px;
+                font-size: 13px;
                 line-height: 22px;
-                padding: 15px 13px 25px;
+                padding: 15px 13px 30px;
             }
         }
         a {
@@ -293,6 +293,7 @@ p {
                 font-size: 12px;
                 max-width: 100%;
                 padding: 6px 15px;
+                margin-bottom: 15px;
             }
         }
         p {
@@ -301,8 +302,10 @@ p {
             font-size: 16px;
             letter-spacing: 1.5px;
             @include under-mobile {
-                font-size: 11px;
+                font-size: 13px;
                 max-width: 100%;
+                padding-right: 30px;
+                text-align: center;
             }
             font {
                 padding: 0 4px;
@@ -317,7 +320,7 @@ p {
         max-width: 40%;
         position: absolute;
         z-index: 0;
-        right: 5%;
+        right: 3%;
         max-height: 97vh;
         @include under-mobile {
             //position: relative;
@@ -436,7 +439,7 @@ p {
 
         &:nth-child(2n) {
             .pic {
-                left: -13%;
+                // left: -13%;
                 @include under-mobile {
                     left: -10%;
                 }
@@ -450,7 +453,7 @@ p {
         }
         &:nth-child(2n + 1) {
             .pic {
-                right: -5%;
+                right: -4%;
                 @include under-mobile {
                     right: -8%;
                 }
@@ -477,11 +480,12 @@ p {
         }
         &#st_00 {
             .pic {
-                left: -11%;
+                left: -5%;
             }
         }
         &#st_02 {
             .text {
+                padding-left: 35px;
                 img {
                     @include under-mobile {
                         width: 80%;
@@ -489,25 +493,33 @@ p {
                 }
             }
             .pic {
-                left: -13%;
+                left: -2%;
             }
         }
         &#st_03 {
             .text {
+                margin: 50px 0 45px;
                 img {
                     @include under-mobile {
                         width: 70%;
                     }
                 }
             }
+            .pic {
+                right: -5.6%;
+            }
         }
         &#st_04 {
             .text {
+                padding-left: 40px;
                 img {
                     @include under-mobile {
                         width: 70%;
                     }
                 }
+            }
+            .pic {
+                left: 1%;
             }
         }
         &#st_05 {
@@ -521,9 +533,11 @@ p {
         }
         &#st_06 {
             .text {
+                margin: 0 -10px 110px 0;
                 a {
                     @include upper-mobile {
                         top: 250px;
+                        right: 60px;
                     }
                 }
                 img {
@@ -532,21 +546,24 @@ p {
                     }
                 }
             }
+            .pic {
+                left: -4%;
+            }
         }
 
         .pic {
             position: absolute;
             //top: 80px;
             //height: calc(100% - 160px);
-            width: 66%;
-            top: 56%;
+            width: 60%;
+            top: 50%;
             transform: translate(0, -50%);
             -webkit-transform: translate(0, -50%);
             -moz-transform: translate(0, -50%);
             -ms-transform: translate(0, -50%);
             -o-transform: translate(0, -50%);
             @include under-mobile {
-                width: 118%;
+                width: 112%;
                 top: initial;
                 bottom: 0;
                 transform: translate(0, 0);
