@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 @import 'library/_mediaQuery';
 @import 'library/_styleSetting';
 
@@ -19,7 +20,7 @@ html {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-touch-callout: none;
     outline: none;
-    font-family: arial, 'Microsoft JhengHei', '微軟正黑體', sans-serif !important;
+    font-family: 'Noto Sans', 'Microsoft JhengHei', '微軟正黑體', sans-serif !important;
 }
 
 .pc {
@@ -199,7 +200,7 @@ p {
         }
         .text {
             position: absolute;
-            top: 52%;
+            top: 50%;
             left: 7.5%;
             transform: translate(0, -50%);
             opacity: 0;
@@ -319,11 +320,11 @@ p {
 
     .ppl {
         bottom: 0;
-        max-width: 40%;
+        max-width: 42%;
         position: absolute;
         z-index: 0;
-        right: 3%;
-        max-height: 97vh;
+        right: 1%;
+        max-height: 99vh;
         @include under-mobile {
         }
     }
@@ -645,7 +646,6 @@ p {
                 letter-spacing: 8px;
                 font-weight: 100;
                 text-decoration: none;
-                font-family: 'MicrosoftJhengHeiRegular';
                 @include under-mobile {
                     width: 86px;
                     height: 86px;
