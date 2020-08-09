@@ -78,10 +78,19 @@ new Vue({
             // reset: true,
             // scale: 1,
         },
+        story_anchor: null,
+    },
+    created() {
+        // const {
+        //     location: { search },
+        // } = window;
+        // const story_anchor = this.findGetParameter('story');
+        // if (story_anchor) this.story_anchor = Number(this.story_anchor) + 1;
     },
     mounted: function () {
         mode();
         // console.log(stories);
+        const $this = this;
         this.detectScreen();
 
         this.$nextTick(() => {
@@ -91,10 +100,17 @@ new Vue({
             this.getVoteNumber();
 
             setTimeout(() => {
-                this.isloaded = true;
+                $this.isloaded = true;
+
                 window.sr = ScrollReveal();
-                sr.reveal('.scr', this.revealOption);
+                sr.reveal('.scr', $this.revealOption);
             }, 500);
+
+            // setTimeout(() => {
+            //     if ($this.story_anchor) {
+            //         $this.ScrollHandler(`st_0${$this.story_anchor}`);
+            //     }
+            // }, 5000);
         });
     },
     methods: {
@@ -152,6 +168,19 @@ new Vue({
         // videoHandler(id) {
         //     console.log(id);
         //     this.currentVideo = id;
+        // },
+        // findGetParameter(parameterName) {
+        //     var result = null,
+        //         tmp = [];
+        //     location.search
+        //         .substr(1)
+        //         .split('&')
+        //         .forEach(function (item) {
+        //             tmp = item.split('=');
+        //             if (tmp[0] === parameterName)
+        //                 result = decodeURIComponent(tmp[1]);
+        //         });
+        //     return result;
         // },
     },
 });

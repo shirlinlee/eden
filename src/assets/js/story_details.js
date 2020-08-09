@@ -6,6 +6,7 @@ module.exports = {
             vote_text: '個人獻出暖暖的友善愛心。',
             color: '#6599cd',
             share_text: '獻出暖暖的友善愛心。',
+            lb_link: 'http://fb.high5.ai/9vzhc1c9Y',
             lb_text: '嗨，你的愛心這麼暖，這麼美，要繼續「伊7」友善下去噢！',
         },
         {
@@ -14,15 +15,17 @@ module.exports = {
             vote_text: '個人送給身心障礙朋友微笑小禮物了！',
             color: '#ffcc33',
             share_text: '送給身心障礙朋友微笑小禮物了！',
+            lb_link: 'http://fb.high5.ai/DuiP0q75b',
             lb_text:
                 '謝謝你的禮物，你快樂，於是我也快樂，讓我們「伊7」快樂吧！☺',
         },
         {
             des:
-                '身心障礙朋友，我來carry!<br />生活中，身心障礙朋友難免會遇到許多不方便，<br class="mb" />邀請您伸出援<br />手為他們加點力，適時給予他們需要的幫助吧！',
+                '身心障礙朋友，我來carry<br />生活中，身心障礙朋友難免會遇到許多不方便，<br class="mb" />邀請您伸出援<br />手為他們加點力，適時給予他們需要的幫助吧！',
             vote_text: '個人成為最carry的神隊友！',
             color: '#669833',
             share_text: '成為最carry的神隊友！',
+            lb_link: 'http://fb.high5.ai/MZYfydvVQ',
             lb_text: '親愛的神隊友，有你真的好！真的棒！',
         },
         {
@@ -31,6 +34,7 @@ module.exports = {
             vote_text: '個人用行動支持身障朋友的用心。',
             color: '#990434',
             share_text: '用行動支持身障朋友的用心。',
+            lb_link: 'http://fb.high5.ai/12MrRpL7Z',
             lb_text: '小朋友才做選擇，送禮和做公益是不是通通都想要！',
         },
         {
@@ -39,6 +43,7 @@ module.exports = {
             vote_text: '個人體貼讓出無障礙設施給身障朋友。',
             color: '#ff9999',
             share_text: '體貼讓出無障礙設施給身障朋友。',
+            lb_link: 'http://fb.high5.ai/PaKRR-h2O',
             lb_text: '動起來、動起來！讓禮讓成為全民運動吧！',
         },
         {
@@ -47,6 +52,7 @@ module.exports = {
             vote_text: '個人願意換位思考，善待身心障礙朋友。',
             color: '#cccc65',
             share_text: '願意換位思考，善待身心障礙朋友。',
+            lb_link: 'http://fb.high5.ai/NvBuse0WC',
             lb_text:
                 '當大家都唱「我們不一樣」的時候，我們要大聲唱「我們都一樣」♫~♪~',
         },
@@ -56,6 +62,7 @@ module.exports = {
             vote_text: '個人帶給身心障礙朋友正面的鼓勵！',
             color: '#66cccc',
             share_text: '帶給身心障礙朋友正面的鼓勵！',
+            lb_link: 'http://fb.high5.ai/nIJTLKusf',
             lb_text: '謝謝你與我們「伊 7」友善，記得每天都要回來+1 噢！',
         },
     ],

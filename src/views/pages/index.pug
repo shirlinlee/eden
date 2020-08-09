@@ -74,20 +74,20 @@ block main
 
         section#story(ref="story")
             img.action(src=assets+"/images/action.svg", alt="")
-            div.story_item.W100.scr(v-for="(item, idx) in stories",:id="'st_0'+idx", :key="idx")
+            div.story_item.W100(v-for="(item, idx) in stories",:id="'st_0'+idx", :ref="'st_0'+idx",:key="idx")
                 .border(:style="{'background-color':item.color }")
-                .W1366
+                .W1366.scr
                     //- img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
                     .text
                         img(:src="'assets/images/pc/title-'+(idx+1)+'.svg'", alt="")
-                        a(:href="'/story.html#0'+(idx+1)", :style="{'border-color':item.color, 'color': item.color }")
+                        a(:href="'/story_0'+(idx+1)+'.html'", :style="{'border-color':item.color, 'color': item.color }")
                             font(:style="{'background-color':item.color }")
                             span
                                 | GO
                                 br
                                 | +1
 
-                img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
+                img.scr.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
 
         section#video
             img.title(src=assets+"/images/title.svg", alt="")

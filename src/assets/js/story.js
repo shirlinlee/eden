@@ -16,11 +16,13 @@ new Vue({
     created: function () {
         // 初始化story需呈現內容
         const {
-            location: { hash },
+            location: { pathname },
         } = window;
-        const [tag, num] = hash.split('#');
-        if (!!Number(num)) {
-            this.story_index = Number(num) - 1;
+        const [tag, num] = pathname.split('_');
+
+        if (!!num) {
+            this.story_index = Number(num.replace('.html', '')) - 1;
+            console.log();
         }
         this.story_individual = this.stories[this.story_index];
 
@@ -31,9 +33,9 @@ new Vue({
         });
     },
     mounted: function () {
-        console.log(this.story_index);
         mode();
         this.$nextTick(() => {
+            console.log(this.story_index);
             // 從cookie取得是否可以投票
             this.canVote = Cookies.get(`story${this.story_index}_voted`)
                 ? false
@@ -118,6 +120,7 @@ new Vue({
                     method: 'feed', //feed\share
                     link: domain,
                     picture: `${domain}/assets/images/share.jpg`,
+                    redirect_uri: `${domain}/story.html#0${this.story_index}`,
                     name: "伊7'友善 讓愛無礙",
                     description:
                         '在台灣，每20個人就有一位是身心障礙者，在生活中，他們除了需要面對自身障礙所帶來的考驗外，就連生活環境也處處充滿挑戰。友善，是我們可以給身心障礙朋友的溫暖。伊甸基金會愛心大使張睿家，誠摯地邀請您與我們一同響應7個友善行動任務，讓愛無礙從你、我開始做起！',

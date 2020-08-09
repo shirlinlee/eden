@@ -21,16 +21,6 @@ block main
                 img.title.pc(:src="'assets/images/p'+(story_index)+'/title_pc.svg'", alt="")
                 img.title.pad(:src="'assets/images/p'+(story_index)+'/title_mb.svg'", alt="")
                 p(v-html="story_individual.des")
-                    //- | 發揮我的影響力！
-                    //- br
-                    //- | 邀請您與家人或朋友，一人一個7拼出友善愛心手勢，
-                    //- br
-                    //- | 拍下照片上傳您的社群並加入hashtag
-                    //- a #和我伊7友善
-                    //- a #讓愛無礙，
-                    //- br
-                    //- | 讓友善行動任務擴散到城市的每個角落。
-
 
                 a.vote(:style="{'background': (canVote) ? story_individual.color: '#eee' }", :class="{ 'disable': !canVote }",@click="voting")
                     span(:style="{'border-color': (canVote) ? '#fff':story_individual.color, 'color': (canVote) ? '#fff':story_individual.color,  'opacity': (canVote) ? '1':'.8' }")
@@ -50,7 +40,7 @@ block main
             .right
                 img(:src="'assets/images/p'+(story_index)+'/img_02_pc.jpg'", alt="")
 
-            a.back(href="/")
+            a.back(:href="'/#st_0'+(story_index)")
                 img.arrow(src=assets+"/images/back.svg", alt="")
                 img.arrow_hover(src=assets+"/images/back_white.svg", alt="")
 
@@ -59,7 +49,7 @@ block main
         .lb_wrapper(:class="{ 'show': showLb }")
             .lb(:style="{'border-color': story_individual.color }")
                 p {{story_individual.lb_text}}
-                a.lb_chat(href="http://fb.high5.ai/9vzhc1c9Y", target="_blank") 來聊聊吧
+                a.lb_chat(:href="story_individual.lb_link", target="_blank") 來聊聊吧
                 a.lb_close(:style="{'border-color': story_individual.color, 'color':  story_individual.color }", @click="LbHandler(false)")
                     .after(:style="{'background-color': story_individual.color }")
                     .before(:style="{'background-color': story_individual.color }")

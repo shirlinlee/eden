@@ -202,6 +202,7 @@ p {
             position: absolute;
             top: 50%;
             left: 7.5%;
+            width: 58%;
             transform: translate(0, -50%);
             opacity: 0;
             transition: opacity 0.5s;
@@ -213,6 +214,7 @@ p {
                 opacity: 1;
             }
             @include under-mobile {
+                width: 100%;
                 position: relative;
                 top: initial;
                 transform: initial;
@@ -248,7 +250,7 @@ p {
             background-position: left top;
             background-size: 32px;
             padding: 25px 25px 33px;
-            width: 60%;
+            // width: 60%;
             display: block;
             @media screen and (max-width: 1000px) {
                 font-size: 16px;
@@ -271,7 +273,7 @@ p {
             border: 1px solid #fff;
             margin: 0 0 30px;
             display: inline-block;
-            max-width: 70%;
+            // max-width: 70%;
             transition: all 0.3s;
             -webkit-transition: all 0.3;
             -moz-transition: all 0.3;
@@ -301,7 +303,7 @@ p {
         }
         p {
             display: block;
-            max-width: 70%;
+            // max-width: 70%;
             font-size: 16px;
             letter-spacing: 1.5px;
             @include under-mobile {
@@ -403,6 +405,7 @@ p {
         position: absolute;
         top: 0;
         left: 50%;
+        z-index: 5;
         transform: translate(-50%, -50%);
         -webkit-transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
@@ -423,6 +426,7 @@ p {
         .W1366 {
             position: relative;
             display: inline-block;
+            z-index: 2;
         }
 
         .border {
@@ -474,6 +478,7 @@ p {
             }
         }
         &#st_00 {
+            padding-top: 145px;
             .pic {
                 left: -5%;
                 @include under-mobile {
@@ -483,6 +488,7 @@ p {
             }
         }
         &#st_01 {
+            padding-top: 145px;
             .text {
                 img {
                     @include under-mobile {
@@ -641,7 +647,7 @@ p {
                 -o-border-radius: 50%;
                 text-align: center;
                 line-height: 45px;
-                padding: 45px 0;
+                padding: 42px 0 45px 7px;
                 font-size: 32px;
                 letter-spacing: 8px;
                 font-weight: 100;
@@ -703,14 +709,17 @@ p {
     > img {
         display: block;
         margin: 0 auto 30px;
+        position: relative;
+        z-index: 10;
+        &.line {
+            margin-bottom: 35px;
+        }
         @include under-mobile {
             margin: 0 auto 10px;
             &.title {
                 width: 137px;
             }
             &.line {
-                position: relative;
-                z-index: 10;
                 width: 30px;
             }
         }
