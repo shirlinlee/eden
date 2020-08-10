@@ -154,7 +154,7 @@ p {
     }
     .logo_friendly {
         position: absolute;
-        left: 90px;
+        left: calc(4% + 40px);
         top: 6%;
         height: 16.8%;
         max-height: 127px;
@@ -203,6 +203,7 @@ p {
             top: 50%;
             left: 7.5%;
             width: 58%;
+            max-width: 650px;
             transform: translate(0, -50%);
             opacity: 0;
             transition: opacity 0.5s;
@@ -362,6 +363,9 @@ p {
         margin-left: 19%;
         text-align: left;
         font-weight: bold;
+        @media screen and(min-width: 1400px) {
+            margin: 0 auto;
+        }
         @include under-mobile {
             width: 100%;
             margin-left: 0%;
@@ -420,7 +424,7 @@ p {
         margin-bottom: 100px;
         position: relative;
         @include under-mobile {
-            padding: 0 50px 75vw;
+            padding: 0 50px 75vw !important;
             margin-bottom: 5px;
         }
         .W1366 {
@@ -452,10 +456,16 @@ p {
         }
         &:nth-child(2n + 1) {
             .pic {
-                right: -4%;
-                @include under-mobile {
-                    right: -8%;
-                }
+                // right: -4%;
+                // @media screen and(min-width: 1366px) {
+                //     margin: 0 5% 0 0;
+                // }
+                // @media screen and(min-width: 1400px) {
+                //     margin: 0 12% 0 0;
+                // }
+                // @media screen and(min-width: 1600px) {
+                //     margin: 0 16% 0 0;
+                // }
             }
             .text {
                 float: left;
@@ -480,10 +490,15 @@ p {
         &#st_00 {
             padding-top: 145px;
             .pic {
-                left: -5%;
+                transform: translate(-90%, -50%);
+                -webkit-transform: translate(-90%, -50%);
+                -moz-transform: translate(-90%, -50%);
+                -ms-transform: translate(-90%, -50%);
+                -o-transform: translate(-90%, -50%);
                 @include under-mobile {
-                    left: -10%;
-                    bottom: -1%;
+                    left: -8%;
+                    bottom: 0;
+                    transform: none;
                 }
             }
         }
@@ -497,9 +512,11 @@ p {
                 }
             }
             .pic {
+                transform: translate(0%, -50%);
                 @include under-mobile {
                     left: -5%;
-                    bottom: -8%;
+                    bottom: 0;
+                    transform: none;
                 }
             }
         }
@@ -514,10 +531,11 @@ p {
                 }
             }
             .pic {
-                left: -2%;
+                transform: translate(-90%, -50%);
                 @include under-mobile {
                     left: -5%;
                     bottom: -2%;
+                    transform: none;
                 }
             }
         }
@@ -531,10 +549,11 @@ p {
                 }
             }
             .pic {
-                right: -5.6%;
+                transform: translate(0%, -50%);
                 @include under-mobile {
                     left: -5%;
-                    bottom: -5%;
+                    bottom: -3%;
+                    transform: none;
                 }
             }
         }
@@ -552,9 +571,11 @@ p {
                 }
             }
             .pic {
-                left: 1%;
+                transform: translate(-90%, -50%);
                 @include under-mobile {
-                    left: 0;
+                    left: 2%;
+                    bottom: -2%;
+                    transform: none;
                 }
             }
         }
@@ -567,10 +588,12 @@ p {
                 }
             }
             .pic {
+                transform: translate(0%, -50%);
                 @include under-mobile {
                     left: 3%;
                     width: 101%;
                     bottom: 5%;
+                    transform: none;
                 }
             }
         }
@@ -592,11 +615,12 @@ p {
                 }
             }
             .pic {
-                left: -4%;
+                transform: translate(-90%, -50%);
                 @include under-mobile {
                     left: -3%;
                     width: 108%;
                     bottom: 8%;
+                    transform: none;
                 }
             }
         }
@@ -607,16 +631,34 @@ p {
             //height: calc(100% - 160px);
             width: 60%;
             top: 50%;
-            transform: translate(0, -50%);
-            -webkit-transform: translate(0, -50%);
-            -moz-transform: translate(0, -50%);
-            -ms-transform: translate(0, -50%);
-            -o-transform: translate(0, -50%);
+            left: 50%;
+            max-width: 800px;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transition: margin 0.3s;
+            -webkit-transition: margin 0.3s;
+            -moz-transition: margin 0.3s;
+            -ms-transition: margin 0.3s;
+            -o-transition: margin 0.3s;
+            // @media screen and(min-width: 1300px){
+            //     margin: 0 0 0 5%;
+            // }
+            // @media screen and(min-width: 1400px) {
+            //     margin: 0 0 0 7%;
+            // }
+            // @media screen and(min-width: 1500px) {
+            //     margin: 0 0 0 9%;
+            // }
+            // @media screen and(min-width: 1600px) {
+            //     margin: 0 0 0 16%;
+            // }
             @include under-mobile {
                 width: 111%;
                 top: initial;
                 bottom: 0;
-                transform: translate(0, 0);
             }
         }
         .text {
@@ -684,6 +726,10 @@ p {
                 span {
                     z-index: 1;
                     position: relative;
+                    @include under-mobile {
+                        margin: -2px 0 0 7px;
+                        display: block;
+                    }
                 }
                 @include upper-pad {
                     &:hover {

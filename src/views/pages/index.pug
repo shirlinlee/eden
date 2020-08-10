@@ -76,9 +76,9 @@ block main
             img.action(src=assets+"/images/action.svg", alt="")
             div.story_item.W100(v-for="(item, idx) in stories",:id="'st_0'+idx", :ref="'st_0'+idx",:key="idx")
                 .border(:style="{'background-color':item.color }")
-                .W1366.scr
+                .W1366
                     //- img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
-                    .text
+                    .text(:class="scrHandler(idx, false)")
                         img(:src="'assets/images/pc/title-'+(idx+1)+'.svg'", alt="")
                         a(:href="'/story_0'+(idx+1)+'.html'", :style="{'border-color':item.color, 'color': item.color }")
                             font(:style="{'background-color':item.color }")
@@ -87,7 +87,7 @@ block main
                                 br
                                 | +1
 
-                img.scr.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="")
+                img.pic(:src="'assets/images/a-'+(idx+1)+'-p.jpg'", alt="", :class="scrHandler(idx, true)")
 
         section#video
             img.title(src=assets+"/images/title.svg", alt="")

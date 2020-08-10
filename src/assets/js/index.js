@@ -74,7 +74,6 @@ new Vue({
         revealOption: {
             distance: '80px',
             duration: 1000,
-            delay: 200,
             // reset: true,
             // scale: 1,
         },
@@ -104,7 +103,8 @@ new Vue({
 
                 window.sr = ScrollReveal();
                 sr.reveal('.scr', $this.revealOption);
-            }, 500);
+                sr.reveal('.scr_late', { ...$this.revealOption, delay: 400 });
+            }, 800);
 
             // setTimeout(() => {
             //     if ($this.story_anchor) {
@@ -164,6 +164,17 @@ new Vue({
                 top: this.$refs[element].offsetTop,
                 behavior: 'smooth',
             });
+        },
+        scrHandler(index, isImg) {
+            if (!this.isMobile) {
+                // if (index % 2 === 0) {
+                return isImg ? 'scr' : 'scr_late';
+                // }
+                // else {
+                // return isImg ? 'scr_late' : 'scr';
+                // }
+            }
+            return 'scr';
         },
         // videoHandler(id) {
         //     console.log(id);
