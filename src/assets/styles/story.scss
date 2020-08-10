@@ -32,6 +32,7 @@ footer {
     transform: translate(-50%, -50%);
     width: 100%;
     display: inline-block;
+    max-width: initial;
     @include under-pad {
         position: relative;
         top: 0;
@@ -53,6 +54,9 @@ footer {
     .left {
         width: 35%;
         position: relative;
+        img {
+            width: 100%;
+        }
         @include under-pad {
             width: 100%;
         }
@@ -256,6 +260,9 @@ footer {
     .right {
         width: 11.2%;
         float: right;
+        img {
+            width: 100%;
+        }
         @include under-pad {
             display: none;
         }
