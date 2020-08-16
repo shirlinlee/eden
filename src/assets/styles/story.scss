@@ -110,7 +110,7 @@ footer {
                 font-size: 17px;
             }
             @include under-mobile {
-                font-size: 13px;
+                font-size: 14px;
             }
             a {
                 color: #0000ff;
@@ -283,9 +283,11 @@ footer {
         -o-border-radius: 50%;
         transition: all 0.5s;
         z-index: 20;
-        .arrow_hover {
-            display: none;
-        }
+        background-color: #a2a2a2;
+
+        // .arrow_hover {
+        //     display: none;
+        // }
 
         @media screen and (max-height: 660px) {
             top: -30px;
@@ -296,13 +298,14 @@ footer {
 
         @include upper-pad {
             &:hover {
-                background-color: #a2a2a2;
-                .arrow_hover {
-                    display: block;
-                }
-                .arrow {
-                    display: none;
-                }
+                transform: translate(0, -100%) scale(1.05);
+                // background-color: #a2a2a2;
+                // .arrow_hover {
+                //     display: block;
+                // }
+                // .arrow {
+                //     display: none;
+                // }
             }
         }
         @include under-pad {

@@ -314,7 +314,7 @@ p {
             }
             @include under-mobile {
                 letter-spacing: 0px;
-                font-size: 12px;
+                font-size: 13px;
                 max-width: 100%;
                 padding: 6px 15px;
                 margin-bottom: 15px;
@@ -824,11 +824,12 @@ p {
         @include under-mobile {
             margin-top: -25px;
             padding-bottom: 5px;
-            padding: 35px 20px;
+            padding: 35px 0;
         }
         .main_v {
             max-width: 860px;
             margin: 0 auto;
+            padding: 0 20px;
             position: relative;
             img {
                 width: 100%;
@@ -846,6 +847,9 @@ p {
                 width: 88%;
                 height: 86%;
                 background-color: #fff;
+                @include under-mobile {
+                    width: 79%;
+                }
             }
         }
     }
@@ -855,10 +859,9 @@ p {
         position: relative;
         padding: 0 25px;
         @include under-mobile {
-            padding: 0;
             margin-top: 10px;
             margin-bottom: 10px;
-            padding: 0 10px;
+            padding: 0;
         }
     }
     .swiper-wrapper {
@@ -867,23 +870,26 @@ p {
         }
     }
     .swiper-slide {
+        display: inline-block;
         text-align: left;
         padding: 0 14px;
         cursor: pointer;
+        &.currentPlay {
+            background-color: #fff;
+        }
         @include under-mobile {
-            padding: 0;
+            padding: 0 20px 10px 180px;
             min-height: 90px;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
             position: relative;
-            padding-left: 155px;
         }
         img {
             width: 100%;
             @include under-mobile {
                 width: 140px;
                 position: absolute;
-                left: 0;
-                top: 0;
+                left: 23px;
+                top: 10px;
             }
         }
         .title_v {

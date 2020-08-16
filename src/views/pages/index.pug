@@ -102,7 +102,7 @@ block main
                 .swiper-container#video_nav.scr
                     .swiper-wrapper
                         .swiper-slide(v-for="(video, index) in videos", :data-id="video.youtubeId")
-                            //-  ,@click="videoHandler(video.youtubeId)"
+                            //-  ,@click="videoHandler(video.youtubeId)" :class="{'currentPlay': currentVideo === video.youtubeId}",
                             img(:src="'assets/images/v'+ video.img +'.jpg'", alt="")
                             h3.title_v {{video.title}}
                             p.des_v {{video.des}}

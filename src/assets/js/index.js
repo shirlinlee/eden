@@ -141,6 +141,8 @@ new Vue({
                     'click',
                     function () {
                         let id = this.getAttribute('data-id');
+                        $('.swiper-slide').removeClass('currentPlay');
+                        $(this).addClass('currentPlay');
                         $this.currentVideo = id;
                     },
                     false

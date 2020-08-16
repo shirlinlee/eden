@@ -40,8 +40,8 @@ block main
             .right
                 img(:src="'assets/images/p'+(story_index)+'/img_02_pc.jpg'", alt="")
 
-            a.back(:href="'/#st_0'+(story_index)")
-                img.arrow(src=assets+"/images/back.svg", alt="")
+            a.back(:href="'/#st_0'+(story_index+1)")
+                //- img.arrow(src=assets+"/images/back.svg", alt="")
                 img.arrow_hover(src=assets+"/images/back_white.svg", alt="")
 
 
