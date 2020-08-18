@@ -75,11 +75,18 @@ footer {
         width: 53.8%;
         padding-left: 60px;
         position: absolute;
-        // display: flex;
-        // flex-wrap: wrap;
         height: 100%;
         left: 35%;
         top: 0;
+        // &:after {
+        //     content: '';
+        //     left: 30px;
+        //     top: 132px;
+        //     background-color: rgba(0, 0, 0, 0.5);
+        //     width: 130px;
+        //     height: 27px;
+        //     position: absolute;
+        // }
         @include under-pad {
             position: relative;
             left: 0;
@@ -313,13 +320,43 @@ footer {
             right: 10px;
             width: 40px;
             height: 40px;
-            background-color: #fff;
+            // background-color: #fff;
         }
     }
 
     &.st_00 {
         .title {
-            max-width: 480px;
+            width: 78%;
+        }
+    }
+    &.st_01 {
+        .title {
+            width: 77%;
+        }
+    }
+    &.st_02 {
+        .title {
+        }
+    }
+    &.st_03 {
+        .title {
+            width: 68%;
+        }
+    }
+    &.st_04 {
+        .title {
+            width: 55%;
+        }
+    }
+
+    &.st_05 {
+        .title {
+            width: 67%;
+        }
+    }
+    &.st_06 {
+        .title {
+            width: 59%;
         }
     }
 }

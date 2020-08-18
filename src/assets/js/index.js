@@ -106,6 +106,15 @@ new Vue({
                 sr.reveal('.scr_late', { ...$this.revealOption, delay: 400 });
             }, 800);
 
+            $('#video_nav')
+                .find('.swiper-slide')
+                .each(function (item) {
+                    console.log($(this).attr('data-id'));
+                    if ($(this).attr('data-id') === $this.currentVideo) {
+                        $(this).addClass('currentPlay');
+                    }
+                });
+
             // setTimeout(() => {
             //     if ($this.story_anchor) {
             //         $this.ScrollHandler(`st_0${$this.story_anchor}`);

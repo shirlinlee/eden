@@ -1,0 +1,17 @@
+extends ../includes/_layout.pug
+
+block title
+    title 伊7'友善 讓愛無礙
+
+block scss
+
+block main
+    div#storyPage
+
+block js
+    script.
+        if (document.location.protocol == 'https:') {
+            document.location = '/close_dialog.html';
+        } else {
+            top.window.FB.Dialog.remove(top.window.FB.Dialog._active);
+        };
