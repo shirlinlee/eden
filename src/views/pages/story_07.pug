@@ -29,7 +29,7 @@ block main
                         | 我+1
 
                 .bottom
-                    a.share(:href="shareToFBLink",target="_blank", rel="noopener noreferrer" ) 分享
+                    a.share(:href="shareToFBLink",target="_blank" ) 分享
                     a.goMall(href="https://edenmall.eden.org.tw/", target="_blank", :style="{'color': story_individual.color,'border-color': story_individual.color, 'display': (story_index===3)? 'inline-block': 'none' }") 購買產品可上伊甸公益MaLL
                     p.f_b
                         | 目前已有
@@ -40,7 +40,7 @@ block main
             .right
                 img(:src="'assets/images/p'+(story_index)+'/img_02_pc.jpg'", alt="")
 
-            a.back(:href="'/#st_0'+(story_index)")
+            a.back(:href="'/?story='+(story_index)")
                 //- img.arrow(src=assets+"/images/back.svg", alt="")
                 img.arrow_hover(src=assets+"/images/back_white.svg", alt="")
 

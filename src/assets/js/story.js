@@ -20,9 +20,8 @@ new Vue({
         } = window;
         const [tag, num] = pathname.split('_');
 
-        if (!!num) {
+        if (num) {
             this.story_index = Number(num.replace('.html', '')) - 1;
-            console.log();
         }
         this.story_individual = this.stories[this.story_index];
 
@@ -34,7 +33,8 @@ new Vue({
     },
     computed: {
         shareToFBLink() {
-            return `https://www.facebook.com/sharer/sharer.php?u=${domain}&quote=在台灣，每20個人就有一位是身心障礙者，在生活中，他們除了需要面對自身障礙所帶來的考驗外，就連生活環境也處處充滿挑戰。友善，是我們可以給身心障礙朋友的溫暖。伊甸基金會愛心大使張睿家，誠摯地邀請您與我們一同響應7個友善行動任務，讓愛無礙從你、我開始做起！`;
+            return `https://www.facebook.com/sharer.php?u=${domain}`;
+            // return `https://www.facebook.com/sharer.php?u=https://www.sixdotsit.com:112/zh/Articles/Details?Guid=9a14149f-3a41-409c-a4f8-6ada09d3de58&amp;CatId=9`;
             //     FB.ui(
             //         {
             //             display: 'popup',

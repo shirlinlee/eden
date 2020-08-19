@@ -359,7 +359,7 @@ p {
         max-width: 50%;
         position: absolute;
         z-index: 0;
-        right: 1%;
+        right: 1.5%;
         max-height: 97vh;
         @media screen and (max-width: 1200px) {
             max-height: 90vh;
@@ -862,7 +862,7 @@ p {
                 -moz-transform: translate(-50%, -50%);
                 -ms-transform: translate(-50%, -50%);
                 -o-transform: translate(-50%, -50%);
-                width: 88%;
+                width: 85%;
                 height: 86%;
                 background-color: #fff;
                 @include under-mobile {

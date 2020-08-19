@@ -78,13 +78,22 @@ new Vue({
             // scale: 1,
         },
         story_anchor: null,
+        appBody: null,
     },
     created() {
-        // const {
-        //     location: { search },
-        // } = window;
-        // const story_anchor = this.findGetParameter('story');
-        // if (story_anchor) this.story_anchor = Number(this.story_anchor) + 1;
+        const {
+            location: { search },
+        } = window;
+        const getAnchor = this.findGetParameter('story');
+        if (!!getAnchor) {
+            this.story_anchor = getAnchor;
+            console.log(this.story_anchor);
+        }
+        this.appBody = window.opera
+            ? document.compatMode == 'CSS1Compat'
+                ? $('html')
+                : $('body')
+            : $('html,body');
     },
     mounted: function () {
         mode();
@@ -104,22 +113,18 @@ new Vue({
                 window.sr = ScrollReveal();
                 sr.reveal('.scr', $this.revealOption);
                 sr.reveal('.scr_late', { ...$this.revealOption, delay: 400 });
+                if ($this.story_anchor) {
+                    $this.ScrollHandler(`st_0${$this.story_anchor}`);
+                }
             }, 800);
 
             $('#video_nav')
                 .find('.swiper-slide')
                 .each(function (item) {
-                    console.log($(this).attr('data-id'));
                     if ($(this).attr('data-id') === $this.currentVideo) {
                         $(this).addClass('currentPlay');
                     }
                 });
-
-            // setTimeout(() => {
-            //     if ($this.story_anchor) {
-            //         $this.ScrollHandler(`st_0${$this.story_anchor}`);
-            //     }
-            // }, 5000);
         });
     },
     methods: {
@@ -170,11 +175,16 @@ new Vue({
                 // this.swiper.destroy();
             }
         },
-        ScrollHandler(element, to, duration) {
-            window.scroll({
-                top: this.$refs[element].offsetTop,
-                behavior: 'smooth',
-            });
+        ScrollHandler(element) {
+            // window.scroll({
+            //     top: this.$refs[element].offsetTop,
+            //     behavior: 'smooth',
+            // });
+            this.appBody.animate(
+                { scrollTop: $('#' + element).offset().top },
+                300
+            );
+            window.history.pushState({}, document.title, '/');
         },
         scrHandler(index, isImg) {
             if (!this.isMobile) {
@@ -191,18 +201,18 @@ new Vue({
         //     console.log(id);
         //     this.currentVideo = id;
         // },
-        // findGetParameter(parameterName) {
-        //     var result = null,
-        //         tmp = [];
-        //     location.search
-        //         .substr(1)
-        //         .split('&')
-        //         .forEach(function (item) {
-        //             tmp = item.split('=');
-        //             if (tmp[0] === parameterName)
-        //                 result = decodeURIComponent(tmp[1]);
-        //         });
-        //     return result;
-        // },
+        findGetParameter(parameterName) {
+            var result = null,
+                tmp = [];
+            location.search
+                .substr(1)
+                .split('&')
+                .forEach(function (item) {
+                    tmp = item.split('=');
+                    if (tmp[0] === parameterName)
+                        result = decodeURIComponent(tmp[1]);
+                });
+            return result;
+        },
     },
 });
