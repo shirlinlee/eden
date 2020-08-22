@@ -3,6 +3,7 @@
 
 body {
     min-height: 100vh;
+    opacity: 1 !important;
 }
 
 footer {
@@ -114,6 +115,9 @@ footer {
             line-height: 1.6;
             font-weight: 400;
             color: #4d4d4d;
+            &.loaded {
+                opacity: 1 !important;
+            }
             @include under-pad {
                 font-size: 17px;
             }
@@ -190,6 +194,9 @@ footer {
             }
             p {
                 line-height: 1;
+                &.loaded {
+                    opacity: 1 !important;
+                }
             }
             font {
                 // color: #6699cc;
@@ -396,7 +403,7 @@ footer {
     -ms-transition: all 0.4s;
     -o-transition: all 0.4s;
     &.show {
-        opacity: 1;
+        opacity: 1 !important;
         z-index: 3000;
     }
     .lb {

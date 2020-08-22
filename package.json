@@ -19,7 +19,6 @@
         "glob": "^7.1.6",
         "html-loader": "^1.1.0",
         "html-webpack-plugin": "^4.2.0",
-        "jquery": "^3.5.1",
         "live-server": "^1.2.1",
         "mini-css-extract-plugin": "^0.9.0",
         "node-sass": "^4.14.0",

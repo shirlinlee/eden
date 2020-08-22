@@ -20,7 +20,7 @@ block main
             .main_des
                 img.title.pc(:src="'assets/images/p'+(story_index)+'/title_pc.svg'", alt="")
                 img.title.pad(:src="'assets/images/p'+(story_index)+'/title_mb.svg'", alt="")
-                p(v-html="story_individual.des")
+                p(v-html="story_individual.des", :class="{'loaded': isLoaded}", style="opacity: 0")
 
                 a.vote(:style="{'background': (canVote) ? story_individual.color: '#eee' }", :class="{ 'disable': !canVote }",@click="voting")
                     span(:style="{'border-color': (canVote) ? '#fff':story_individual.color, 'color': (canVote) ? '#fff':story_individual.color,  'opacity': (canVote) ? '1':'.8' }")
@@ -31,7 +31,7 @@ block main
                 .bottom
                     a.share(:href="shareToFBLink",target="_blank" ) 分享
                     a.goMall(href="https://edenmall.eden.org.tw/", target="_blank", :style="{'color': story_individual.color,'border-color': story_individual.color, 'display': (story_index===3)? 'inline-block': 'none' }") 購買產品可上伊甸公益MaLL
-                    p.f_b
+                    p.f_b(:class="{'loaded': isLoaded}", style="opacity: 0")
                         | 目前已有
                         font(:style="{'color': story_individual.color}") {{ story_voting_num }}
                         | 個人{{  story_individual.share_text }}
@@ -46,7 +46,7 @@ block main
 
 
 
-        .lb_wrapper(:class="{ 'show': showLb }")
+        .lb_wrapper(:class="{ 'show': showLb }", style="opacity: 0")
             .lb(:style="{'border-color': story_individual.color }")
                 p {{story_individual.lb_text}}
                 a.lb_chat(:href="story_individual.lb_link", target="_blank") 來聊聊吧
@@ -60,5 +60,5 @@ block main
 
 
 block js
-    script(src= public +'/lib/js/vue@2.6.11.min.js' defer)
+
     script(src=assets + '/js/story.bundle.js' defer)
