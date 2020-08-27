@@ -55,8 +55,8 @@ new Vue({
     },
     mounted: function () {
         mode();
+        docCookies.setItem('story0', '123');
         this.$nextTick(() => {
-            console.log(this.story_index);
             // 從cookie取得是否可以投票
             this.canVote = Cookies.get(`story${this.story_index}_voted`)
                 ? false
@@ -82,7 +82,7 @@ new Vue({
                         Cookies.set(
                             `story${this.story_index}`,
                             voted_num,
-                            cookie_expire
+                            'Thu Aug 27 2020 16:35:00 GMT+0800 (台北標準時間)'
                         );
                     } else {
                         console.warn(error);
@@ -94,43 +94,60 @@ new Vue({
                 });
         },
         voting() {
+            console.log(docCookies.hasItem('story0'));
             // 先檢查是否可以投
             if (this.canVote) {
                 const voted_num = this.story_voting_num + 1;
-                axios
-                    .post(
-                        `${domain_api}/api/CountPerson.php`,
-                        qs.stringify({
-                            type: this.story_index + 1,
-                        })
-                    )
-                    .then((response) => {
-                        const {
-                            data: { individual },
-                            status,
-                        } = response;
-                        if (status === 200) {
-                            Cookies.set(
-                                `story${this.story_index}`,
-                                voted_num,
-                                cookie_expire
-                            );
-                            Cookies.set(
-                                `story${this.story_index}_voted`,
-                                new Date(),
-                                cookie_expire
-                            );
-                            this.story_voting_num = this.story_voting_num + 1;
-                            this.canVote = false;
-                            this.showLb = true;
-                        } else {
-                            console.warn(error);
-                        }
-                    })
-                    .catch(function (error) {
-                        // 请求失败处理
-                        console.warn(error);
-                    });
+
+                // test
+
+                Cookies.set(
+                    `story${this.story_index}`,
+                    voted_num,
+                    'Thu Aug 27 2020 16:35:00 GMT+0800 (台北標準時間)'
+                );
+                Cookies.set(
+                    `story${this.story_index}_voted`,
+                    new Date(),
+                    'Thu Aug 27 2020 16:35:00 GMT+0800 (台北標準時間)'
+                );
+
+                // test
+
+                // axios
+                //     .post(
+                //         `${domain_api}/api/CountPerson.php`,
+                //         qs.stringify({
+                //             type: this.story_index + 1,
+                //         })
+                //     )
+                //     .then((response) => {
+                //         const {
+                //             data: { individual },
+                //             status,
+                //         } = response;
+                //         if (status === 200) {
+                //             Cookies.set(
+                //                 `story${this.story_index}`,
+                //                 voted_num,
+                //                 cookie_expire
+                //             );
+                //             Cookies.set(
+                //                 `story${this.story_index}_voted`,
+                //                 new Date(),
+                //                 cookie_expire
+                //             );
+                //             this.story_voting_num = this.story_voting_num + 1;
+                //             this.canVote = false;
+                //             this.showLb = true;
+                //         } else {
+                //             console.warn(error);
+                //         }
+                //     })
+                //     .catch(function (error) {
+                //         // 请求失败处理
+                //         console.warn(error);
+                //     });
             }
         },
         // shareToFB() {
