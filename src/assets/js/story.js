@@ -12,6 +12,7 @@ new Vue({
         story_voting_num: 0,
         canVote: true,
         showLb: false,
+        isLoaded: false,
     },
     created: function () {
         // 初始化story需呈現內容
@@ -57,6 +58,10 @@ new Vue({
         mode();
         docCookies.setItem('story0', '123');
         this.$nextTick(() => {
+<<<<<<< HEAD
+=======
+            this.isLoaded = true;
+>>>>>>> 9eb56a1b9cac9e08127b5b0702417c26d0a17fcf
             // 從cookie取得是否可以投票
             this.canVote = Cookies.get(`story${this.story_index}_voted`)
                 ? false
