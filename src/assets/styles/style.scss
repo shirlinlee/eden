@@ -45,7 +45,8 @@ header {
 
     img {
         float: right;
-        margin: 50px 35px;
+        margin: 25px;
+        width: 90px;
         @media screen and (min-width: 1200px) and (max-height: 650px),
             print and (orientation: landscape) {
             margin: 35px;
@@ -153,7 +154,7 @@ p {
     position: relative;
     height: 100vh;
     width: 100%;
-    @include under-mobile {
+    @include under-pad {
         height: initial;
         // padding-top: 297px;
     }
@@ -171,7 +172,7 @@ p {
             height: 13.8%;
             top: 4%;
         }
-        @include under-mobile {
+        @include under-pad {
             max-height: 65px;
             left: 25px;
             top: 25px;
@@ -189,7 +190,7 @@ p {
             print and (orientation: landscape) {
             height: 77%;
         }
-        @include under-mobile {
+        @include under-pad {
             position: relative;
             width: calc(100% - 25px);
             height: initial;
@@ -207,7 +208,7 @@ p {
             -ms-transform: translate(0, -90%);
             -o-transform: translate(0, -90%);
             width: 100px;
-            @include under-mobile {
+            @include under-pad {
                 width: 38px;
                 top: -125px;
                 transform: none;
@@ -235,7 +236,7 @@ p {
                 width: 50%;
                 left: 3.5%;
             }
-            @include under-mobile {
+            @include under-pad {
                 width: 100%;
                 position: relative;
                 top: initial;
@@ -261,7 +262,7 @@ p {
                 padding-bottom: 20px;
                 margin-bottom: 25px;
             }
-            @include under-mobile {
+            @include under-pad {
                 font-size: 28px;
                 padding-bottom: 15px;
                 margin-bottom: 15px;
@@ -286,12 +287,14 @@ p {
                 font-size: 16px;
                 letter-spacing: 0;
             }
-            @include under-mobile {
+            @include under-pad {
                 width: 100%;
                 background-size: 13px;
-                font-size: 13px;
                 line-height: 22px;
                 padding: 15px 13px 30px;
+            }
+            @include under-mobile {
+                font-size: 13px;
             }
         }
         a {
@@ -328,12 +331,14 @@ p {
                     }
                 }
             }
-            @include under-mobile {
+            @include under-pad {
                 letter-spacing: 0px;
-                font-size: 13px;
                 max-width: 100%;
                 padding: 6px 15px;
                 margin-bottom: 15px;
+            }
+            @include under-mobile {
+                font-size: 13px;
             }
         }
         p {
@@ -341,10 +346,12 @@ p {
             // max-width: 70%;
             font-size: 16px;
             letter-spacing: 1.5px;
-            @include under-mobile {
-                font-size: 13px;
+            @include under-pad {
                 max-width: 100%;
                 padding-right: 30px;
+            }
+            @include under-mobile {
+                font-size: 13px;
                 text-align: center;
             }
             font {
@@ -373,8 +380,13 @@ p {
     }
     .ppl_mb {
         width: 68%;
-        margin-top: 15px;
-        margin-left: 18%;
+        max-width: 250px;
+        margin: 15px auto 0;
+        transform: translate(10%, 0);
+        -webkit-transform: translate(10%, 0);
+        -moz-transform: translate(10%, 0);
+        -ms-transform: translate(10%, 0);
+        -o-transform: translate(10%, 0);
         vertical-align: top;
     }
 }
@@ -415,6 +427,9 @@ p {
             letter-spacing: 7px;
             margin-bottom: 35px;
             line-height: 1.2;
+            @include under-pad {
+                font-size: 28px;
+            }
             @include under-mobile {
                 font-size: 21px;
                 letter-spacing: 3px;
@@ -442,7 +457,7 @@ p {
 #story {
     position: relative;
     padding: 150px 0;
-    @include under-mobile {
+    @include under-pad {
         padding: 70px 0 0;
     }
     .action {
@@ -455,7 +470,7 @@ p {
         -moz-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
-        @include under-mobile {
+        @include under-pad {
             width: 45px;
         }
     }
@@ -463,7 +478,7 @@ p {
         padding: 80px 50px;
         margin-bottom: 100px;
         position: relative;
-        @include under-mobile {
+        @include under-pad {
             padding: 0 50px 75vw !important;
             margin-bottom: 5px;
         }
@@ -479,7 +494,7 @@ p {
             height: 95%;
             top: 0;
             z-index: 5;
-            @include under-mobile {
+            @include under-pad {
                 width: 9px;
             }
         }
@@ -512,7 +527,7 @@ p {
                 img {
                     max-width: 100%;
                     margin-left: 10%;
-                    @include under-mobile {
+                    @include under-pad {
                         margin-left: 3%;
                     }
                 }
@@ -522,7 +537,7 @@ p {
                         print and (orientation: landscape) {
                         right: -8px;
                     }
-                    @include under-mobile {
+                    @include under-pad {
                         right: -5px;
                     }
                 }
@@ -539,7 +554,7 @@ p {
                 -moz-transform: translate(-90%, -50%);
                 -ms-transform: translate(-90%, -50%);
                 -o-transform: translate(-90%, -50%);
-                @include under-mobile {
+                @include under-pad {
                     left: -8%;
                     bottom: 0;
                     transform: none;
@@ -550,7 +565,7 @@ p {
             padding-top: 145px;
             .text {
                 img {
-                    @include under-mobile {
+                    @include under-pad {
                         max-width: 93%;
                     }
                 }
@@ -561,7 +576,7 @@ p {
                     print and (orientation: landscape) {
                     transform: translate(-8%, -50%);
                 }
-                @include under-mobile {
+                @include under-pad {
                     left: -5%;
                     bottom: 0;
                     transform: none;
@@ -572,7 +587,7 @@ p {
             .text {
                 padding-left: 35px;
                 img {
-                    @include under-mobile {
+                    @include under-pad {
                         width: 90%;
                         margin-left: -10%;
                     }
@@ -580,7 +595,7 @@ p {
             }
             .pic {
                 transform: translate(-90%, -50%);
-                @include under-mobile {
+                @include under-pad {
                     left: -5%;
                     bottom: -2%;
                     transform: none;
@@ -591,7 +606,7 @@ p {
             .text {
                 margin: 50px 0 45px;
                 img {
-                    @include under-mobile {
+                    @include under-pad {
                         width: 70%;
                     }
                 }
@@ -602,7 +617,7 @@ p {
                     print and (orientation: landscape) {
                     transform: translate(-8%, -50%);
                 }
-                @include under-mobile {
+                @include under-pad {
                     left: -5%;
                     bottom: -3%;
                     transform: none;
@@ -610,13 +625,13 @@ p {
             }
         }
         &#st_04 {
-            @include under-mobile {
+            @include under-pad {
                 margin-top: 30px;
             }
             .text {
                 padding-left: 40px;
                 img {
-                    @include under-mobile {
+                    @include under-pad {
                         width: 77%;
                         margin-left: -12%;
                     }
@@ -628,7 +643,7 @@ p {
                     print and (orientation: landscape) {
                     transform: translate(-82%, -50%);
                 }
-                @include under-mobile {
+                @include under-pad {
                     left: 2%;
                     bottom: -2%;
                     transform: none;
@@ -638,7 +653,7 @@ p {
         &#st_05 {
             .text {
                 img {
-                    @include under-mobile {
+                    @include under-pad {
                         width: 61%;
                     }
                 }
@@ -649,7 +664,7 @@ p {
                     print and (orientation: landscape) {
                     transform: translate(-8%, -50%);
                 }
-                @include under-mobile {
+                @include under-pad {
                     left: 3%;
                     width: 101%;
                     bottom: 5%;
@@ -658,25 +673,25 @@ p {
             }
         }
         &#st_06 {
-            @include under-mobile {
+            @include under-pad {
             }
             .text {
                 margin: 0 -10px 110px 0;
                 a {
-                    @include upper-mobile {
+                    @include upper-pad {
                         top: 250px;
                         right: 60px;
                     }
                 }
                 img {
-                    @include under-mobile {
+                    @include under-pad {
                         width: 68%;
                     }
                 }
             }
             .pic {
                 transform: translate(-90%, -50%);
-                @include under-mobile {
+                @include under-pad {
                     left: -3%;
                     width: 108%;
                     bottom: 8%;
@@ -715,7 +730,7 @@ p {
             // @media screen and(min-width: 1600px) {
             //     margin: 0 0 0 16%;
             // }
-            @include under-mobile {
+            @include under-pad {
                 width: 111%;
                 top: initial;
                 bottom: 0;
@@ -728,7 +743,7 @@ p {
             margin: 35px 0 60px;
             width: 50%;
             padding-left: 1%;
-            @include under-mobile {
+            @include under-pad {
                 width: 100%;
                 float: none;
             }
@@ -790,7 +805,7 @@ p {
                 span {
                     z-index: 1;
                     position: relative;
-                    @include under-mobile {
+                    @include under-pad {
                         margin: -2px 0 0 7px;
                         display: block;
                     }
@@ -947,6 +962,10 @@ p {
         float: left;
         margin-left: 20px;
         margin-top: -105px;
+        @include under-pad {
+            width: 60px;
+        }
+
         @include under-mobile {
             float: none;
             margin: 0 auto 28px;
@@ -1046,13 +1065,18 @@ p {
 }
 
 @include under-pad {
+    .pc,
+    .mb {
+        display: none;
+    }
     .pad {
         display: inline-block;
     }
 }
 
 @include under-mobile {
-    .pc {
+    .pc,
+    .pad {
         display: none;
     }
 

@@ -144,14 +144,6 @@ footer {
                 // background-color: #aaa !important;
                 cursor: not-allowed;
             }
-            @include under-pad {
-                position: relative;
-                margin: 35px auto 28px;
-                right: initial;
-                bottom: initial;
-                width: 106px;
-                height: 106px;
-            }
             @include upper-pad {
                 &:not(.disable) {
                     &:hover {
@@ -162,6 +154,18 @@ footer {
                     }
                 }
             }
+            @include under-pad {
+                position: relative;
+                margin: 35px auto 28px;
+                right: initial;
+                bottom: initial;
+            }
+
+            @include under-mobile {
+                width: 106px;
+                height: 106px;
+            }
+
             span {
                 transition: all 0.5s;
                 text-align: center;
@@ -174,12 +178,13 @@ footer {
                 font-size: 20px;
                 line-height: 1.7;
                 padding: 40px 0;
-                @include under-pad {
-                    font-size: 17px;
-                    padding: 25px 0;
-                }
+                // @include under-pad {
+                //     font-size: 17px;
+                //     padding: 25px 0;
+                // }
                 @include under-mobile {
                     font-size: 13px;
+                    padding: 25px 0;
                 }
             }
         }
